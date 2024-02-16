@@ -3,6 +3,7 @@ import Services from './services/Services'
 import Reviews from './reviews/Reviews'
 import Advantages from './advantages/Advantages'
 import Discounts from './discounts/Discounts'
+import AffiliateProgram from './affiliateProgram/AffiliateProgram'
 
 const App = () => {
 	return (
@@ -13,6 +14,7 @@ const App = () => {
 			<Reviews />
 			<Advantages />
 			<Discounts />
+			<AffiliateProgram />
 		</div>
 		</>
 	)
