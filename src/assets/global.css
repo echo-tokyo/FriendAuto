@@ -4,6 +4,27 @@ html, body{
 	height: 100%;
 	cursor: default;
 }
+.content{
+	margin-left: 160px;
+	margin-right: 160px;
+}
+input[type="submit"]{
+	border: 4px dashed #ffca0e;
+	border-radius: 50px;
+	width: 200px;
+	height: 60px;
+	background: none;
+	font-size: 26px;
+	font-weight: 300;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+input[type="submit"]:hover{
+	transform: scale(1.025);
+}
+span{
+	color: #ffca0e;
+}
 h1{
 	font-size: 100px;
 	font-weight: 800;

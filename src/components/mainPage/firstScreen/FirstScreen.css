@@ -42,4 +42,8 @@ header h4:hover{
 }
 img{
 	width: 350px;
+	transition: 0.5s ease;
+}
+img:hover{
+	transform: scale(1.025);
 }
