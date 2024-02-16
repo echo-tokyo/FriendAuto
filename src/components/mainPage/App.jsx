@@ -2,6 +2,7 @@ import FirstScreen from './firstScreen/FirstScreen'
 import Services from './services/Services'
 import Reviews from './reviews/Reviews'
 import Advantages from './advantages/Advantages'
+import Discounts from './discounts/Discounts'
 
 const App = () => {
 	return (
@@ -11,6 +12,7 @@ const App = () => {
 			<Services />
 			<Reviews />
 			<Advantages />
+			<Discounts />
 		</div>
 		</>
 	)
