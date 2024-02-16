@@ -38,6 +38,9 @@
 	gap: 5px;
 	text-align: center;
 }
+.card_text h4{
+	color: #8E8E8E;
+}
 .card_text h4:last-of-type{
 	color: #FFCA0E;
 }
