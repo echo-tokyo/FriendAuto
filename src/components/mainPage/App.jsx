@@ -5,6 +5,7 @@ import Advantages from './advantages/Advantages'
 import Discounts from './discounts/Discounts'
 import AffiliateProgram from './affiliateProgram/AffiliateProgram'
 import Job from './job/Job'
+import Footer from './footer/Footer'
 
 const App = () => {
 	return (
@@ -18,6 +19,7 @@ const App = () => {
 			<AffiliateProgram />
 			<Job />
 		</div>
+		<Footer />
 		</>
 	)
 }
