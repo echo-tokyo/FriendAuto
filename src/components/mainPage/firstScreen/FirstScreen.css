@@ -40,10 +40,6 @@ header h4:hover{
 	align-items: flex-end;
 	padding-top: 20px;
 }
-img{
+.img img{
 	width: 350px;
-	transition: 0.5s ease;
-}
-img:hover{
-	transform: scale(1.025);
 }
