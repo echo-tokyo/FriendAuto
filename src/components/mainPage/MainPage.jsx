@@ -6,11 +6,12 @@ import Discounts from './discounts/Discounts'
 import AffiliateProgram from './affiliateProgram/AffiliateProgram'
 import Job from './job/Job'
 import Footer from './footer/Footer'
+import ServicesPage from '../servicesPage/ServicesPage'
 
-const App = () => {
+const MainPage = () => {
 	return (
 		<>
-		<FirstScreen />
+		{/* <FirstScreen />
 		<div className="content">
 			<Services />
 			<Reviews />
@@ -18,10 +19,11 @@ const App = () => {
 			<Discounts />
 			<AffiliateProgram />
 			<Job />
-		</div>
-		<Footer />
+		</div> */}
+		<ServicesPage />
+		{/* <Footer /> */}
 		</>
 	)
 }
 
-export default App
+export default MainPage

@@ -3,13 +3,13 @@ import './FirstScreen.css'
 const FirstScreen = () => {
 	return (
 		<div className="mainScreen">
-			<header>
+			<nav>
 				<h4>ОТЗЫВЫ</h4>
 				<h4>ПРЕИМУЩЕСТВА</h4>
 				<h4>УСЛУГИ</h4>
 				<h4>ЗАПИСЬ</h4>
 				<h4>ТРУДОУСТРОЙСТВО</h4>
-			</header>
+			</nav>
 			<div className="title">
 				<h1>Френд<span>-Авто</span></h1>
 				<h3>Автосервис по обслуживанию легковых <br /> автомобилей</h3>

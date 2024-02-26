@@ -1,0 +1,15 @@
+header{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+}
+header nav h4{
+	color: #929292;
+}
+header nav h4:hover{
+	color: rgb(0, 0, 0);
+}
+.nav2{
+	display: flex;
+}

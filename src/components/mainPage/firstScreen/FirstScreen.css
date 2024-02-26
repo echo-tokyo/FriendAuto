@@ -6,7 +6,7 @@
 	background-size: cover;
 	color: white;
 }
-header{
+nav{
 	display: flex;
 	justify-content: center;
 	gap: 20px;
@@ -15,7 +15,7 @@ header{
 	color: #bcbcbc;
 	padding-top: 40px;
 }
-header h4:hover{
+nav h4:hover{
 	transition: 0.1s;
 	color: white;
 }
