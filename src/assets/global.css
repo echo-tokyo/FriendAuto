@@ -12,6 +12,12 @@ html, body{
 span{
 	color: #ffca0e;
 }
+.card, .reviews_title h3, .footer_map img, Link, nav h4{
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+}
 
 /* Кнопки */
 input[type="submit"]{

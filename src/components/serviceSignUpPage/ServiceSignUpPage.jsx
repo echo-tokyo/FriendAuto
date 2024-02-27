@@ -3,7 +3,7 @@ import Header from './header/Header'
 import Services from './services/Services'
 import Questions from '../servicesPage/questions/Questions'
 
-const SignUpPage = () => {
+const ServiceSignUpPage = () => {
 	return (
 		<>
 		<div className="content">
@@ -16,4 +16,4 @@ const SignUpPage = () => {
 	)
 }
 
-export default SignUpPage
+export default ServiceSignUpPage

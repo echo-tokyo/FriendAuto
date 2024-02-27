@@ -4,10 +4,10 @@ const FirstScreen = () => {
 	return (
 		<div className="mainScreen">
 			<nav>
+				<h4>ЗАПИСЬ</h4>
+				<h4>УСЛУГИ</h4>
 				<h4>ОТЗЫВЫ</h4>
 				<h4>ПРЕИМУЩЕСТВА</h4>
-				<h4>УСЛУГИ</h4>
-				<h4>ЗАПИСЬ</h4>
 				<h4>ТРУДОУСТРОЙСТВО</h4>
 			</nav>
 			<div className="title">
