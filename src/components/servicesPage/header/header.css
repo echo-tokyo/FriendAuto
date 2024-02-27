@@ -4,6 +4,15 @@ header{
 	align-items: center;
 	gap: 50px;
 }
+header nav{
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	color: #bcbcbc;
+	padding-top: 40px;
+}
 header nav h4{
 	color: #929292;
 }

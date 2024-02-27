@@ -6,12 +6,11 @@ import Discounts from './discounts/Discounts'
 import AffiliateProgram from './affiliateProgram/AffiliateProgram'
 import Job from './job/Job'
 import Footer from './footer/Footer'
-import ServicesPage from '../servicesPage/ServicesPage'
 
 const MainPage = () => {
 	return (
 		<>
-		{/* <FirstScreen />
+		<FirstScreen />
 		<div className="content">
 			<Services />
 			<Reviews />
@@ -19,9 +18,8 @@ const MainPage = () => {
 			<Discounts />
 			<AffiliateProgram />
 			<Job />
-		</div> */}
-		<ServicesPage />
-		{/* <Footer /> */}
+		</div>
+		<Footer />
 		</>
 	)
 }

@@ -1,10 +1,10 @@
 .services{
-	margin-top: 50px;
+	margin-top: 10px;
 	margin-bottom: 60px;
 }
-.services_title{
+.services h2{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 .cards{
 	margin-top: 70px;
