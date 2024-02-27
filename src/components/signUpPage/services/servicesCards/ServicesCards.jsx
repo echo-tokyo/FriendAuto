@@ -1,5 +1,3 @@
-import '../services.css'
-
 const ServicesCards = () => {
   return (
 	<div className="cards">

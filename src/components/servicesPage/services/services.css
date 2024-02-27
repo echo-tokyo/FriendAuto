@@ -1,7 +1,8 @@
-.services{
+.services_services{
 	margin-top: 10px;
+	margin-bottom: 60px;
 }
-.services h2{
+.services_services h2{
 	display: flex;
 	justify-content: center;
 }
