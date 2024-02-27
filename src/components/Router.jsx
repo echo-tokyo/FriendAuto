@@ -9,7 +9,7 @@ const Router = () => {
 			<Routes>
 				<Route path='/' element={<MainPage />} />
 				<Route path='services' element={<ServicesPage />} />
-				<Route path='signup' element={<ServiceSignUpPage />} />
+				<Route path='services/signup/:id' element={<ServiceSignUpPage />} />
 				<Route path='*' element={<h2 style={{display:'flex', justifyContent:'center'}}>404 Page not found</h2>} />
 			</Routes>
 		</BrowserRouter>
