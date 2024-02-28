@@ -7,7 +7,7 @@ const Job = () => {
 		<div className="job_items">
 			<div className="job_title">
 				<p>Диагност электронных систем</p>
-				<h3>Открыта вакансия, ждём в свою команду!</h3>
+				<h3>Открыта вакансия, ждём вас в нашу команду!</h3>
 				<input type="submit" />
 			</div>
 			<img src="../../../../public/worker.png" alt="" />

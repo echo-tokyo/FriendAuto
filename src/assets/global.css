@@ -18,6 +18,9 @@ span{
 a{
 	text-decoration: none;
 }
+body::-webkit-scrollbar { width: 0; }
+body { -ms-overflow-style: none; }
+body { overflow: -moz-scrollbars-none; }
 
 /* Кнопки */
 input[type="submit"]{
@@ -33,6 +36,29 @@ input[type="submit"]{
 }
 input[type="submit"]:hover{
 	transform: scale(1.025);
+}
+.modal input[type="text"]{
+	width: 400px;
+	height: 80px;
+	border-radius: 20px;
+	background: #e7e7e7;
+	font-size: 26px;
+	font-weight: 350;
+	text-align: center;
+	border: none;
+}
+.modal input[type="submit"]{
+	width: 400px;
+	height: 80px;
+	border-radius: 20px;
+	background:#ffca0e;
+	font-size: 26px;
+	font-weight: 350;
+	text-align: center;
+	border: none;
+}
+.modal input[type="submit"]:hover{
+	transform: none;
 }
 
 /* Анимации */
