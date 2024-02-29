@@ -44,3 +44,9 @@
     flex-direction: column;
     gap: 5px;
 }
+.modal_info{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import './job.css'
-import { toggleModal2 } from '../../../store/modal/modal.slice'
+import { backgroundToggle, toggleModal2 } from '../../../store/modal/modal.slice'
 
 const Job = () => {
 	const dispatch = useDispatch()
@@ -14,6 +14,7 @@ const Job = () => {
 					<input type="submit" onClick={(e) => {
 						e.preventDefault()
 						dispatch(toggleModal2())
+						dispatch(backgroundToggle())
 					}}/>
 				</div>
 				<img src="../../../../public/worker.png" alt="" />

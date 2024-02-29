@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
-import './mainPageModal.css'
-import { toggleModal2 } from '../../store/modal/modal.slice'
+import { backgroundToggle, toggleModal2 } from '../../store/modal/modal.slice'
+
 const MainPageModal = () => {
 	const dispatch = useDispatch()
 	return (
@@ -10,7 +10,10 @@ const MainPageModal = () => {
 					<h2><span>А</span>нкета</h2>
 					<h3>Оставьте свою анкету, а мы вам перезвоним</h3>
 				</div>
-				<svg style={{cursor: "pointer"}} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => dispatch(toggleModal2())}>
+				<svg style={{cursor: "pointer"}} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => {
+					dispatch(toggleModal2())
+					dispatch(backgroundToggle())
+				}}>
 					<path d="M40 20L20 40M20 20L40 40" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 				</svg>
 			</div>
