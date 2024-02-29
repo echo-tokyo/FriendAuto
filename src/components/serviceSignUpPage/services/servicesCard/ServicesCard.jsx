@@ -1,6 +1,11 @@
-const ServicesCard = ({card, setIsModalOpen, isModalOpen}) => {
+import { toggleModal } from '../../../../store/modals/modals.slice'
+import { useDispatch, useSelector } from 'react-redux'
+
+const ServicesCard = ({card}) => {
+	const isModalOpen = useSelector((state) => state.modal.isModalOpen)
+	const dispatch = useDispatch()
 	const modalOpen = () => { 
-		setIsModalOpen(!isModalOpen) 
+		dispatch(toggleModal())
 		if (isModalOpen === true) { 
 			document.body.style.backgroundColor = 'white' 
 			document.body.style.overflow = 'visible' 
