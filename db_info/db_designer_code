@@ -1,0 +1,50 @@
+user {
+	id integer pk increments
+	username varchar(50) unique
+	password varchar(128)
+}
+
+category {
+	id integer pk increments
+	name varchar(50) unique
+}
+
+service {
+	id integer pk increments
+	name varchar(100) unique
+	category_id integer >* category.id
+	price varchar(50)
+}
+
+vacancy {
+	id integer pk increments
+	title varchar(100) unique
+	short_desc text null
+}
+
+service_record {
+	id integer pk increments
+	service_id integer >* service.id
+	car_brand varchar(100)
+	car_number varchar(10)
+	client_phone varchar(11)
+	viewed boolean def(0)
+	sent_at timestamp def(CURRENT_TIMESTAMP)
+}
+
+worksheet {
+	id integer pk increments
+	vacancy_id integer >* vacancy.id
+	client_name varchar(100)
+	client_surname varchar(150)
+	client_phone varchar(11)
+	viewed boolean def(0)
+	sent_at timestamp def(CURRENT_TIMESTAMP)
+}
+
+token {
+	id integer pk increments
+	user_id integer >* user.id
+	token varchar(255)
+}
+
