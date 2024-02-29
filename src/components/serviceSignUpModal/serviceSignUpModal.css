@@ -17,6 +17,12 @@
 	justify-content: center;
     position: relative;
 }
+.modal_title{
+    text-align: center;
+}
+.modal_title h3{
+    color: #5A5A5A;
+}
 .modal_header svg{
     display: flex;
     align-items: center;

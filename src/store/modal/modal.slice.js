@@ -4,6 +4,7 @@ const modalSlice = createSlice({
 	name: 'modal',
 	initialState: {
 		isModalOpen: false,
+		serviceName: ''
 	},
 	reducers: {
 		toggleModal: (state) => {
@@ -20,8 +21,12 @@ const modalSlice = createSlice({
 				document.querySelectorAll('.card').forEach((e)=> e.style.backgroundColor = '#ECECEC') 
 				document.querySelector('.questions').style.backgroundColor = '#ECECEC'
 			}
-	}}
+		},
+		serviceName: (state, action) => {
+			state.serviceName = action.payload
+		}
+	}
 })
 
-export const {toggleModal} = modalSlice.actions
+export const {toggleModal, serviceName} = modalSlice.actions
 export default modalSlice.reducer

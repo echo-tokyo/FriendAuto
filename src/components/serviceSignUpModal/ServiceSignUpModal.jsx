@@ -1,15 +1,16 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './serviceSignUpModal.css'
-import { toggleModal } from '../../store/modals/modals.slice'
+import { toggleModal } from '../../store/modal/modal.slice'
 
 const ServiceSignUpModal = () => {
 	const dispatch = useDispatch()
+	const selectedServiceName = useSelector((state) => state.modal.serviceName);
 	return (
 		<div className="modal">
 			<div className="modal_header">
 				<div className="modal_title">
 					<h2><span>З</span>апись</h2>
-					<h3>Замена масла</h3>
+					<h3>{selectedServiceName}</h3>
 				</div>
 				<svg style={{cursor: "pointer"}} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => dispatch(toggleModal()) }>
 					<path d="M40 20L20 40M20 20L40 40" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
