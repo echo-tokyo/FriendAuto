@@ -9,10 +9,7 @@ import { useSelector } from 'react-redux'
 const ServiceSignUpPage = () => {
 	// const {id} = useParams()
 	// TODO: будет запрос, в url которого передается id - `url-example/get-services?id=${id}`
-	const isModalOpen = useSelector((state) => {
-		state.modal.isModalOpen
-		console.log(state)
-	})
+	const isModalOpen = useSelector((state) => state.modal.isModalOpen)
 	return (
 		<>
 		<div className="content">
