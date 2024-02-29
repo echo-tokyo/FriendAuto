@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+from datetime import timedelta
 
 from dotenv import load_dotenv
 from pathlib import Path
@@ -44,9 +45,10 @@ DEFAULT_APPS = (
 )
 THIRD_PARTY_APPS = (
     'rest_framework',
-    # 'corsheaders',
+    'corsheaders',
 )
 LOCAL_APPS = (
+    'core',
     'user',
     'service',
     'vacancy',
@@ -59,9 +61,12 @@ INSTALLED_APPS = LOCAL_APPS + THIRD_PARTY_APPS + DEFAULT_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # one my middleware
+    # 'core.middlewares.CheckTokenMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -72,10 +77,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 IP_OR_DNS_SERVER = os.getenv('IP_OR_DNS_SERVER')
 
+MAIN_ADMIN_USERNAME = os.getenv('MAIN_ADMIN_USERNAME')
+MAIN_ADMIN_PASSWORD = os.getenv('MAIN_ADMIN_PASSWORD')
+
 
 # Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -89,8 +95,6 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -105,6 +109,33 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# REST_FRAMEWORK = {
+#     'EXCEPTION_HANDLER': 'core.exceptions.core_exception_handler',
+#     'NON_FIELD_ERRORS_KEY': 'error',
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'core.auth_backend.JWTAuthentication',
+#     ),
+# }
+JWT_EXPIRE = timedelta(days=15)
+
+
+# development (NOT USE IN PRODUCTION)
+CORS_ALLOW_ALL_ORIGINS = True
+# Адреса с доступом к кросс-доменным запросам
+# CORS_ALLOWED_ORIGINS = [
+#    # real frontend host&port
+#    "http://frontend:5050"
+# ]
+
+# Разрешение на включение в запрос куки
+CORS_ALLOW_CREDENTIALS = True
+# Разрешённые методы
+CORS_ALLOW_METHODS = (
+    "OPTIONS",
+    "GET",
+    "POST",
+)
 
 
 # Internationalization
@@ -124,6 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# my custom "User" model
+AUTH_USER_MODEL = 'user.User'
