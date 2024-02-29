@@ -18,13 +18,13 @@ from django.urls import path, include
 
 urlpatterns = [
     # юзер
-    path('api/user', include('user.urls')),
+    path('api/user/', include('user.urls')),
     # управление услугами
-    path('api/service', include('service.urls')),
+    path('api/service/', include('service.urls')),
     # управление вакансиями
-    path('api/vacancy', include('vacancy.urls')),
+    path('api/vacancy/', include('vacancy.urls')),
     # управление записями на услуги
-    path('api/service_record', include('service_record.urls')),
+    path('api/service_record/', include('service_record.urls')),
     # управление анкетами на вакансии
-    path('api/worksheet', include('worksheet.urls')),
+    path('api/worksheet/', include('worksheet.urls')),
 ]

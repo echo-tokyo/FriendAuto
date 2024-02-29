@@ -26,6 +26,6 @@ class Service(models.Model):
     )
     price = models.CharField(
         max_length=50,
-        null=False,
-        blank=False
+        null=True,
+        blank=True,
     )

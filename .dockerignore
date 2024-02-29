@@ -2,7 +2,7 @@
 
 .env
 
-/resources_docs
+/api_documentation
 
 /backend/DockerfileBackend
 /nginx/DockerfileNginx
