@@ -6,8 +6,11 @@ import Discounts from './discounts/Discounts'
 import AffiliateProgram from './affiliateProgram/AffiliateProgram'
 import Job from './job/Job'
 import Footer from './footer/Footer'
+import { useSelector } from 'react-redux'
+import MainPageModal from '../mainPageModal/MainPageModal'
 
 const MainPage = () => {
+	const isModalOpen = useSelector((state) => state.modal.isModalOpen)
 	return (
 		<>
 		<FirstScreen />
@@ -18,6 +21,9 @@ const MainPage = () => {
 			<Discounts />
 			<AffiliateProgram />
 			<Job />
+			{isModalOpen && (
+				<MainPageModal />
+			)}
 		</div>
 		<Footer />
 		</>

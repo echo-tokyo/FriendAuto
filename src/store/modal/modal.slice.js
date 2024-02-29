@@ -22,11 +22,26 @@ const modalSlice = createSlice({
 				document.querySelector('.questions').style.backgroundColor = '#ECECEC'
 			}
 		},
+		toggleModal2: (state) => {
+			state.isModalOpen = !state.isModalOpen
+			if (state.isModalOpen === true) { 
+				document.body.style.backgroundColor = '#D7D7D7' 
+				document.body.style.overflow = 'hidden' 
+				document.querySelectorAll('.job_items').forEach((e) => e.style.backgroundColor = '#CCCCCC')
+				document.querySelector('.affiliateProgram').style.backgroundColor = '#CCCCCC'
+			}  
+			if (state.isModalOpen === false) { 
+				document.body.style.backgroundColor = 'white' 
+				document.body.style.overflow = 'visible' 
+				document.querySelectorAll('.job_items').forEach((e) => e.style.backgroundColor = '#ECECEC')
+				document.querySelector('.affiliateProgram').style.backgroundColor = '#ECECEC'
+			}
+		},
 		serviceName: (state, action) => {
 			state.serviceName = action.payload
 		}
 	}
 })
 
-export const {toggleModal, serviceName} = modalSlice.actions
+export const {toggleModal, toggleModal2, serviceName} = modalSlice.actions
 export default modalSlice.reducer
