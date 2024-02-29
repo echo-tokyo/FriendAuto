@@ -12,7 +12,7 @@ const Job = () => {
 				{jobItems.map((jobItem) => <JobItem key={jobItem.id} setJobItems={setJobItems} jobItem={jobItem}/>)}
 			</div>
 		) : (
-			console.log('first')
+			null
 		)}
 		</>
 	)
