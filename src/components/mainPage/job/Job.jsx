@@ -1,24 +1,15 @@
-import { useDispatch } from 'react-redux'
-import './job.css'
-import { backgroundToggle, toggleModal2 } from '../../../store/modal/modal.slice'
+import { useState } from 'react'
+import JobItem from './jobItem/JobItem'
+import { jobData } from '../../job.data'
 
 const Job = () => {
-	const dispatch = useDispatch()
+	const [jobItems, setJobItems] = useState(jobData)
 	return (
 		<div className="job" id='job'>
 			<h2><span>Р</span>абота у нас</h2>
-			<div className="job_items">
-				<div className="job_title">
-					<p>Диагност электронных систем</p>
-					<h3>Открыта вакансия, ждём вас в нашу команду!</h3>
-					<input type="submit" onClick={(e) => {
-						e.preventDefault()
-						dispatch(toggleModal2())
-						dispatch(backgroundToggle())
-					}}/>
-				</div>
-				<img src="../../../../public/worker.png" alt="" />
-			</div>
+			{jobItems.length > 0 && (
+				jobItems.map((jobItem) => <JobItem key={jobItem.id} setJobItems={setJobItems} jobItem={jobItem}/>)
+			)}
 		</div>
 	)
 }
