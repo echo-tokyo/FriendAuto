@@ -2,7 +2,7 @@ import './job.css'
 
 const Job = () => {
   return (
-	<div className="job">
+	<div className="job" id='job'>
 		<h2><span>Р</span>абота у нас</h2>
 		<div className="job_items">
 			<div className="job_title">

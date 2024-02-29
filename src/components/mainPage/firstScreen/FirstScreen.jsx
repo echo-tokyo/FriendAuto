@@ -1,14 +1,16 @@
+import { useNavigate } from 'react-router-dom'
 import './FirstScreen.css'
 
 const FirstScreen = () => {
+	const nav = useNavigate()
 	return (
 		<div className="mainScreen">
 			<nav>
-				<h4>ЗАПИСЬ</h4>
-				<h4>УСЛУГИ</h4>
-				<h4>ОТЗЫВЫ</h4>
-				<h4>ПРЕИМУЩЕСТВА</h4>
-				<h4>ТРУДОУСТРОЙСТВО</h4>
+				<h4 onClick={() => nav('/services')}>УСЛУГИ</h4>
+				<a href="#reviews"><h4>ОТЗЫВЫ</h4></a>
+				<a href="#advantages"><h4>ПРЕИМУЩЕСТВА</h4></a>
+				<a href="#discounts"><h4>СКИДКИ</h4></a>
+				<a href="#job"><h4>ТРУДОУСТРОЙСТВО</h4></a>
 			</nav>
 			<div className="title">
 				<h1>Френд<span>-Авто</span></h1>
