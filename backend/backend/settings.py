@@ -65,8 +65,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # one my middleware
-    # 'core.middlewares.CheckTokenMiddleware',
+    # my middleware to check token in Token table
+    'core.middlewares.CheckTokenMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -110,14 +110,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# REST_FRAMEWORK = {
-#     'EXCEPTION_HANDLER': 'core.exceptions.core_exception_handler',
-#     'NON_FIELD_ERRORS_KEY': 'error',
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'core.auth_backend.JWTAuthentication',
-#     ),
-# }
-JWT_EXPIRE = timedelta(days=15)
+REST_FRAMEWORK = {
+    # 'EXCEPTION_HANDLER': 'core.exceptions.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'core.auth_backend.JWTAuthentication',
+    ),
+}
+JWT_EXPIRE = timedelta(days=10)
 
 
 # development (NOT USE IN PRODUCTION)
@@ -135,6 +135,7 @@ CORS_ALLOW_METHODS = (
     "OPTIONS",
     "GET",
     "POST",
+    "DELETE",
 )
 
 
