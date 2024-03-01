@@ -5,7 +5,10 @@ from rest_framework.exceptions import APIException
 
 
 class CreateValidateError(APIException):
-    """Ошибка валидации данных при его создании"""
+    """
+    about: general
+    Ошибка валидации данных при создании объекта в БД
+    """
 
     status_code = status.HTTP_409_CONFLICT
     default_detail = _('Validate error')
@@ -13,7 +16,10 @@ class CreateValidateError(APIException):
 
 
 class DropValidateError(APIException):
-    """Ошибка валидации данных при его удалении"""
+    """
+    about: general
+    Ошибка валидации данных при удалении объекта из БД
+    """
 
     status_code = status.HTTP_409_CONFLICT
     default_detail = _('Validate error')
@@ -21,7 +27,10 @@ class DropValidateError(APIException):
 
 
 class UserValidateError(APIException):
-    """Ошибка в получении доступа: неверные данные о пользователе, неверный токен"""
+    """
+    about: user
+    Ошибка в получении доступа: неверные данные о пользователе, неверный токен
+    """
 
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = _('Validate error')
@@ -29,7 +38,10 @@ class UserValidateError(APIException):
 
 
 class UserAccessForbidden(APIException):
-    """Ошибка в получении прав на доступ: юзер не авторизован, деактивирован"""
+    """
+    about: user
+    Ошибка в получении прав на доступ: юзер не авторизован, деактивирован
+    """
 
     status_code = status.HTTP_403_FORBIDDEN
     default_detail = _('Access forbidden')
@@ -37,7 +49,10 @@ class UserAccessForbidden(APIException):
 
 
 class ServerProcessError(APIException):
-    """Ошибка в обработке токена"""
+    """
+    about: token
+    Ошибка в обработке токена
+    """
 
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
     default_detail = _('Process error')
