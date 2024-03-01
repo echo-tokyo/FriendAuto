@@ -1,6 +1,10 @@
 # Добавление услуги
 
-### _URL:_ http://188.225.36.185/api/service/add-service/
+### _URL:_
+
+```text
+http://188.225.36.185/api/service/add-service/
+```
 
 ### _Метод:_ POST
 
