@@ -28,4 +28,6 @@ class CustomUserManager(BaseUserManager):
         raise ActionNotSupported('Ordinary user creation does not supported!')
 
     def create_superuser(self, username, password=None):
+        if not password:
+            raise ValueError('Password was not given! Cannot create superuser.')
         return self._create_user(username, password)

@@ -1,5 +1,5 @@
 from rest_framework import status
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
@@ -12,7 +12,7 @@ from .models import Category, Service
 class AddServiceAPIView(APIView):
     """Add new service to definite category"""
 
-    permission_classes = (AllowAny,)  # ПОМЕНЯТЬ НА IsAuthenticated
+    permission_classes = (IsAuthenticated,)
     serializer_class = AddServiceSerializer
 
     def post(self, request: Request):
@@ -36,7 +36,7 @@ class AddServiceAPIView(APIView):
 class DeleteServiceAPIView(APIView):
     """Delete service"""
 
-    permission_classes = (AllowAny,)  # ПОМЕНЯТЬ НА IsAuthenticated
+    permission_classes = (IsAuthenticated,)
 
     def delete(self, request: Request):
         data = request.data
