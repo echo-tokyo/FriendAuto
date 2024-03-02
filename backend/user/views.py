@@ -14,7 +14,7 @@ class UserLoginAPIView(APIView):
     permission_classes = (AllowAny,)
     serializer_class = UserLoginSerializer
 
-    def post(self, request: Request):
+    def post(self, request: Request) -> Response:
         user_data = request.data
 
         serializer = self.serializer_class(data=user_data)
@@ -28,7 +28,7 @@ class UserLogoutAPIView(APIView):
 
     permission_classes = (IsAuthenticated,)
 
-    def post(self, request: Request):
+    def post(self, request: Request) -> Response:
         token = request.auth
 
         delete_one_token(token=token)

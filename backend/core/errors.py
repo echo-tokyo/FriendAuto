@@ -4,26 +4,26 @@ from rest_framework import status
 from rest_framework.exceptions import APIException
 
 
-class CreateValidateError(APIException):
+class DropServiceError(APIException):
     """
-    about: general
-    Ошибка валидации данных при создании объекта в БД
-    """
-
-    status_code = status.HTTP_409_CONFLICT
-    default_detail = _('Validate error')
-    default_code = 'create_validate_error'
-
-
-class DropValidateError(APIException):
-    """
-    about: general
-    Ошибка валидации данных при удалении объекта из БД
+    about: service
+    Ошибка при удалении услуги из БД
     """
 
     status_code = status.HTTP_409_CONFLICT
-    default_detail = _('Validate error')
-    default_code = 'drop_validate_error'
+    default_detail = _('Service error')
+    default_code = 'drop_service_error'
+
+
+class CreateServiceError(APIException):
+    """
+    about: service
+    Ошибка при создании услуги
+    """
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = _('Service error')
+    default_code = 'create_service_error'
 
 
 class UserValidateError(APIException):
@@ -57,3 +57,14 @@ class ServerProcessError(APIException):
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
     default_detail = _('Process error')
     default_code = 'server_process_error'
+
+
+class CategoryValidateError(APIException):
+    """
+    about: category
+    Ошибка при обработке категории
+    """
+
+    status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    default_detail = _('Validate error')
+    default_code = 'category_validate_error'

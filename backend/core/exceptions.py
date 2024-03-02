@@ -9,9 +9,10 @@ def core_exception_handler(exc, context):
     response = exception_handler(exc, context)
     # словарь с видом ошибки и её обработчиком
     handlers = {
-        # general
-        'CreateValidateError': _handle_my_error,
+        # service
         'DropValidateError': _handle_my_error,
+        # category
+        'CategoryValidateError': _handle_my_error,
         # user
         'AuthenticationFailed': _handle_error,
         'ValidationError': _handle_invalid_data_validation_error,
