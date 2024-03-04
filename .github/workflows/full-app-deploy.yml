@@ -5,15 +5,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  checkout-repo:
+  checkout-changes:
     runs-on: self-hosted
-
-    steps:
-      - uses: actions/checkout@v3
-
-  create-env:
-    runs-on: self-hosted
-    needs: [ checkout-repo ]
 
     env:
       DEBUG: 'True'
@@ -22,6 +15,8 @@ jobs:
       DB_HOST: '172.17.0.1'
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Write Django Env
         run: |
           echo "DJANGO_SECRET_KEY='${{ secrets.DJANGO_SECRET_KEY }}'" >> .env
@@ -39,6 +34,11 @@ jobs:
           echo "DB_HOST=${{ env.DB_HOST }}" >> .env
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
 
+  deploy:
+    runs-on: self-hosted
+    needs: [ checkout-changes ]
+
+    steps:
       - name: Deploy updated repo
         run: |
           docker-compose --file ./docker-compose.yml down
