@@ -1,0 +1,28 @@
+footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 400px;
+	background-color: #24201E;
+	padding-left: 160px;
+	padding-right: 160px;
+	color: white;
+}
+.footer_contacts{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.phone{
+	color: #B3B3B3;
+}
+.footer_map{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+.footer_map img{
+	width: 400px;
+	border-radius: 50px;
+}

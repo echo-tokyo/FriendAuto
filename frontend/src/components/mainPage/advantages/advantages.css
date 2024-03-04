@@ -1,0 +1,32 @@
+.advantages{
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+.advantages h2{
+	display: flex;
+	justify-content: center;
+}
+.advantages_items{
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	padding-top: 50px;
+}
+.advantages_item{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	line-height: normal;
+}
+.advantages_item_title{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.advantages_item p{
+	text-wrap:nowrap;
+}
+.advantages_item img{
+	width: 95px;
+}

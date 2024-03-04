@@ -1,0 +1,45 @@
+.mainScreen{
+	height: 100svh;
+	background-image: url('../../../../public/bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: white;
+}
+nav{
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	color: #bcbcbc;
+	padding-top: 40px;
+}
+nav h4:hover{
+	transition: 0.1s;
+	color: white;
+}
+.title{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	padding-top: 85px;
+	text-align: center;
+	color: #bcbcbc;
+}
+.title h1{
+	color: #ffca0e;
+}
+.title span{
+	color: white;
+}
+.img{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding-top: 20px;
+}
+.img img{
+	width: 350px;
+}

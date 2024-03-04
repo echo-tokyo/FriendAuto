@@ -1,0 +1,31 @@
+.deleteService{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	margin-top: 60px;
+}
+.deleteService_field{
+	height: fit-content;
+	background-color: white;
+	width: 100%;
+	border-radius: 50px;
+}
+.services_in_category {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.checked{
+	text-decoration:line-through;
+	color: red;
+}
+.categories_with_services{
+	margin: 50px;
+}
+.category{
+	font-weight: 500;
+}
+.services_in_category h3{
+	font-weight: 200;
+}

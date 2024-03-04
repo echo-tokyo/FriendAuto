@@ -1,0 +1,27 @@
+.signup_services{
+	margin-top: 10px;
+	margin-bottom: 60px;
+}
+.signup_services h2{
+	display: flex;
+	justify-content: center;
+}
+.signup_services .card{
+	width: 240px;
+	height: 240px;
+	padding-top: 20px;
+}
+.signup_services .card_text{
+	padding-top: 30px;
+	gap: 12px;
+}
+.signup_services .card h3{
+	font-size: 20px;
+	font-weight: 400;
+}
+.signup_services .card h4{
+	font-size: 12px;
+}
+.signup_services .card img{
+	width: 120px;
+}

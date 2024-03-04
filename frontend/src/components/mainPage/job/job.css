@@ -1,0 +1,38 @@
+.job{
+	margin-bottom: 70px;
+}
+.job h2{
+	margin-bottom: 60px;
+}
+.job_items{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-top: 20px;
+	width: 100%;
+	height: 310px;
+	background-color: #F4F4F4;
+	border-radius: 50px;
+	border: 1px solid;
+	transition: 0.5s ease;
+}
+.job_items:hover{
+	transform: scale(1.025);
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.job_title{
+	display: flex;
+	flex-direction: column;
+	line-height: normal;
+	gap: 10px;
+}
+.job_title input{
+	margin-top: 80px;
+}
+.job_items img{
+	height: 310px;
+}
