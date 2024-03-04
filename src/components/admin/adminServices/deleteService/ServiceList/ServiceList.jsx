@@ -2,27 +2,27 @@ import { useState } from 'react';
 
 const ServiceList = ({category}) => {
 	const [selectedService, setSelectedService] = useState(null);
+
 	const toDel = (service) => {
 		const selectedElement = document.getElementById(service.id);
 		if (selectedElement) {
+			const selectedId = service.id;
 			if (selectedElement.classList.contains('checked')) {
-			selectedElement.classList.remove('checked');
-			setSelectedService(null);
+				selectedElement.classList.remove('checked');
+				setSelectedService(null);
 			} else {
-			if (selectedService) {
-				selectedService.classList.remove('checked');
-			}
-			selectedElement.classList.add('checked');
-			setSelectedService(selectedElement);
-			}
-		} else {
-			if (selectedService) {
-			selectedService.classList.remove('checked');
-			setSelectedService(null);
+				const prevSelectedElement = document.getElementById(selectedService);
+				if (prevSelectedElement) {
+					prevSelectedElement.classList.remove('checked');
+				}
+				selectedElement.classList.add('checked');
+				setSelectedService(selectedId);
 			}
 		}
 	}
+
 	console.log(selectedService)
+
 	return (
 		<>
 		<div className="categorys_with_services">
