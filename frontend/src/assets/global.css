@@ -48,7 +48,7 @@ input[type="text"], input[type="email"], input[type="password"], select, input[t
 	width: 320px;
 	height: 70px;
 	border-radius: 20px;
-	background: #e7e7e7;
+	background-color: #e7e7e7;
 	font-size: 26px;
 	font-weight: 350;
 	text-align: center;
