@@ -24,7 +24,7 @@ const ServiceList = ({category}) => {
 
 	return (
 		<>
-		<div className="categorys_with_services">
+		<div className="categories_with_services">
 			<h3 className='category'>{category.category_name}:</h3>
 			<div className='services_in_category'>
 				{category.services.map((service, index) => (

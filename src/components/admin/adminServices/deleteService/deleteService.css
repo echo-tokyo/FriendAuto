@@ -11,14 +11,16 @@
 	width: 100%;
 	border-radius: 50px;
 }
-.services_in_category{
+.services_in_category {
 	display: flex;
+	flex-wrap: wrap;
 }
+
 .checked{
 	text-decoration:line-through;
 	color: red;
 }
-.categorys_with_services{
+.categories_with_services{
 	margin: 50px;
 }
 .category{

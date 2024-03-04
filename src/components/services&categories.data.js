@@ -10,6 +10,18 @@ const servicesWithCategories = [
 			{
 				id: 2,
 				service_name: 'ремонт карданных валов'
+			},
+			{
+				id: 3,
+				service_name: 'ремонт карданных валов'
+			},
+			{
+				id: 4,
+				service_name: 'ремонт карданных валов'
+			},
+			{
+				id: 5,
+				service_name: 'ремонт карданных валов'
 			}
 		]
 	}
