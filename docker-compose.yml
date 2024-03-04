@@ -26,7 +26,7 @@ services:
       - "5173:5173"
     networks:
       proj_network:
-        ipv4_address: 172.16.1.3
+        ipv4_address: 172.16.1.4
 
   nginx:
     build:
@@ -37,7 +37,7 @@ services:
       - "80:80"
     networks:
       proj_network:
-        ipv4_address: 172.16.1.5
+        ipv4_address: 172.16.1.9
     depends_on:
       - backend
       - frontend
