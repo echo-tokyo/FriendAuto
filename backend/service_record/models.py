@@ -1,5 +1,5 @@
-# from django.db import models
-#
+from django.db import models
+
 # from service.models import Service
 #
 #
