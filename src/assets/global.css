@@ -38,9 +38,9 @@ input[type="submit"]{
 input[type="submit"]:hover{
 	transform: scale(1.025);
 }
-.modal input[type="text"]{
-	width: 400px;
-	height: 80px;
+input[type="text"], input[type="email"], input[type="password"]{
+	width: 320px;
+	height: 70px;
 	border-radius: 20px;
 	background: #e7e7e7;
 	font-size: 26px;
@@ -48,9 +48,9 @@ input[type="submit"]:hover{
 	text-align: center;
 	border: none;
 }
-.modal input[type="submit"]{
-	width: 400px;
-	height: 80px;
+.modal input[type="submit"], .admin_form input[type="submit"]{
+	width: 320px;
+	height: 70px;
 	border-radius: 20px;
 	background:#ffca0e;
 	font-size: 26px;
