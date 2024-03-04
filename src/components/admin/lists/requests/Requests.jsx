@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './requests.css'
+import '../requests.css'
 import Request from './request/Request'
 import requestsData from '../../../requests.data'
 
