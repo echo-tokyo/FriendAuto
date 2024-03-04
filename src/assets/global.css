@@ -16,6 +16,11 @@ span{
 .card, .reviews_title h3, .footer_map img, Link, nav h4{
 	cursor: pointer;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0; 
+}
 a{
 	text-decoration: none;
 }
@@ -38,7 +43,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
 	transform: scale(1.025);
 }
-input[type="text"], input[type="email"], input[type="password"]{
+input[type="text"], input[type="email"], input[type="password"], select, input[type="number"]{
 	width: 320px;
 	height: 70px;
 	border-radius: 20px;

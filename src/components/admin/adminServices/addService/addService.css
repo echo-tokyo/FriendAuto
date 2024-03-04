@@ -1,0 +1,19 @@
+input[type="text"], input[type="number"], select{
+	background-color: #D2D2D2;
+}
+select{
+	font-size: 26px;
+	font-weight: 350;
+}
+.addService{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+}
+.addService_title{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	text-align: center;
+}
