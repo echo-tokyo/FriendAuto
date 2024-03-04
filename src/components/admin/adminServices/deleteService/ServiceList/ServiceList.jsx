@@ -6,7 +6,6 @@ const ServiceList = ({category}) => {
 	const toDel = (service) => {
 		const selectedElement = document.getElementById(service.id);
 		if (selectedElement) {
-			const selectedId = service.id;
 			if (selectedElement.classList.contains('checked')) {
 				selectedElement.classList.remove('checked');
 				setSelectedService(null);
@@ -16,7 +15,7 @@ const ServiceList = ({category}) => {
 					prevSelectedElement.classList.remove('checked');
 				}
 				selectedElement.classList.add('checked');
-				setSelectedService(selectedId);
+				setSelectedService(service.id);
 			}
 		}
 	}
