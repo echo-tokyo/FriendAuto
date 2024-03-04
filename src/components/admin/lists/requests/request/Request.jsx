@@ -1,4 +1,4 @@
-const Application = ({request}) => {
+const Request = ({request}) => {
 	return (
 		<div className="request">
 			<div className="request_header">
@@ -17,4 +17,4 @@ const Application = ({request}) => {
 	)	
 }
 
-export default Application
+export default Request

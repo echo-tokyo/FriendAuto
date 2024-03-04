@@ -1,11 +1,11 @@
 import AdminHeader from './adminHeader/AdminHeader'
-import Applications from './applications/Applications'
+import Requests from './lists/requests/Requests'
 
 const Admin = () => {
 	return (
 		<div className="content">
 			<AdminHeader />
-			<Applications />
+			<Requests />
 		</div>
 	)
 }

@@ -1,4 +1,4 @@
-export const requestsData = [
+const requests = [
 	{
 		id: 1,
 		name: 'Замена масла',
@@ -7,3 +7,5 @@ export const requestsData = [
 		phone: '+7 (999) 100 15 55'
 	}
 ]
+
+export default requests

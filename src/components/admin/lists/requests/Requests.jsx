@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import './applications.css'
-import Application from './application/Application'
-import { requestsData } from '../../requests.data'
+import './requests.css'
+import Request from './request/Request'
+import requestsData from '../../../requests.data'
 
-const Applications = () => {
+const Requests = () => {
 	const [requests, setRequests] = useState(requestsData)
 	const [isListOpen, setIsListOpen] = useState(false)
 	return (
@@ -14,7 +14,7 @@ const Applications = () => {
 		{isListOpen && (
 			<div className="requests_list">
 				{requests.length > 0 && (
-					requests.map(request => <Application key={request.id} setRequests={setRequests} request={request}/>)
+					requests.map(request => <Request key={request.id} setRequests={setRequests} request={request}/>)
 				)}
 			</div>
 		)}
@@ -22,4 +22,4 @@ const Applications = () => {
 	)
 }
 
-export default Applications
+export default Requests
