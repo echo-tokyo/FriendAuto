@@ -54,7 +54,7 @@ input[type="text"], input[type="email"], input[type="password"], select, input[t
 	text-align: center;
 	border: none;
 }
-.modal input[type="submit"], .admin_form input[type="submit"], .deleteService input[type="submit"]{
+.modal input[type="submit"], .admin_form input[type="submit"], .deleteService input[type="submit"],  .admin_vacansy_form input[type="submit"]{
 	width: 320px;
 	height: 70px;
 	border-radius: 20px;

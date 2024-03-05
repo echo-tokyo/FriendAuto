@@ -1,0 +1,11 @@
+.deleteVacansy_field{
+	height: fit-content;
+	background-color: #E9E9E9;
+	width: 100%;
+	border-radius: 50px;
+}
+.vacansies_list{
+	margin: 50px;
+	display: flex;
+	flex-wrap: wrap;
+}

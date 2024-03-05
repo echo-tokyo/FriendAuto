@@ -2,6 +2,7 @@ import AdminHeader from './adminHeader/AdminHeader'
 import Requests from './lists/requests/Requests'
 import Worksheets from './lists/worksheets/Worksheets'
 import AdminServices from './adminServices/AdminServices'
+import Vacansies from './vacansies/Vacansies'
 
 const Admin = () => {
 	return (
@@ -14,6 +15,9 @@ const Admin = () => {
 			</div>
 		</div>
 		<AdminServices />
+		<div className="content">
+			<Vacansies />
+		</div>
 		</>
 	)
 }

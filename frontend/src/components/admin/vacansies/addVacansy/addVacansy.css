@@ -1,0 +1,8 @@
+.admin_vacansy_form {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.admin_vacansy_form input[type="submit"]{
+	margin-top: 10px;
+}

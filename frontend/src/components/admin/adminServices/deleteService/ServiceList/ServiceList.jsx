@@ -23,7 +23,6 @@ const ServiceList = ({category}) => {
 	console.log(selectedService)
 
 	return (
-		<>
 		<div className="categories_with_services">
 			<h3 className='category'>{category.category_name}:</h3>
 			<div className='services_in_category'>
@@ -32,7 +31,6 @@ const ServiceList = ({category}) => {
 				))}
 			</div>
 		</div>
-		</>
 	)
 }
 
