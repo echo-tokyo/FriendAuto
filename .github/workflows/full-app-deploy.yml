@@ -28,15 +28,10 @@ jobs:
 
       - name: Write DB Env
         run: |
-#          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
           echo "MYSQL_DATABASE=${{ secrets.DB_NAME }}" >> .env
-#          echo "DB_USER=${{ secrets.DB_USER }}" >> .env
           echo "DB_USER=root" >> .env
-#          echo "DB_USER_PASSWORD=${{ secrets.DB_USER_PASSWORD }}" >> .env
           echo "MYSQL_ROOT_PASSWORD=${{ secrets.DB_USER_PASSWORD }}" >> .env
-#          echo "DB_HOST=${{ env.DB_HOST }}" >> .env
           echo "DB_HOST=db" >> .env
-#          echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
           echo "DB_PORT=3306" >> .env
 
   deploy:
