@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "MYSQL_DATABASE=${{ secrets.DB_NAME }}" >> .env
           echo "DB_USER=root" >> .env
-          echo "MYSQL_ROOT_PASSWORD=${{ secrets.DB_USER_PASSWORD }}" >> .env
+          echo 'MYSQL_ROOT_PASSWORD=${{ secrets.DB_USER_PASSWORD }}' >> .env
           echo "DB_HOST=db" >> .env
           echo "DB_PORT=3306" >> .env
 
