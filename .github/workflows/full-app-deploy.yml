@@ -24,7 +24,7 @@ jobs:
           echo "ALLOWED_HOSTS='${{ env.ALLOWED_HOSTS }}'" >> .env
           echo "IP_OR_DNS_SERVER='${{ env.IP_OR_DNS_SERVER }}'" >> .env
           echo "MAIN_ADMIN_USERNAME='${{ secrets.MAIN_ADMIN_USERNAME }}'" >> .env
-          echo "MAIN_ADMIN_PASSWORD='${{ secrets.MAIN_ADMIN_PASSWORD }}'" >> .env
+          echo 'MAIN_ADMIN_PASSWORD=${{ secrets.MAIN_ADMIN_PASSWORD }}' >> .env
 
       - name: Write DB Env
         run: |
