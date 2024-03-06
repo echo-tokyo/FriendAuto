@@ -9,4 +9,6 @@
 	display: flex;
 	gap: 30px;
 }
-
+.nav h3{
+	cursor: pointer;
+}

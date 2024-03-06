@@ -23,4 +23,5 @@
 }
 .services_in_category h3, .vacansies_list h3{
 	font-weight: 200;
+	cursor: pointer;
 }
