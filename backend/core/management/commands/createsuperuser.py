@@ -22,12 +22,17 @@ class Command(createsuperuser.Command):
             username = settings.MAIN_ADMIN_USERNAME
             password = settings.MAIN_ADMIN_PASSWORD
 
-            # создание первого юзера
-            self.UserModel._default_manager.db_manager(database).create_superuser(
-                username=username,
-                password=password
-            )
-            self.stdout.write(f'Superuser "{username}" with password "{password}" has been created successfully')
+            try:
+                # создание первого юзера
+                self.UserModel._default_manager.db_manager(database).create_superuser(
+                    username=username,
+                    password=password
+                )
+                self.stdout.write(f'Superuser "{username}" with password "{password}" has been created successfully')
+            except Exception:
+                self.stdout.write(
+                    f'Superuser "{username}" with password has not been created. May be first superuser already exist?'
+                )
             return
 
         # если флага --first-user не было, то создаём юзера через интерактивный дефолтный режим
