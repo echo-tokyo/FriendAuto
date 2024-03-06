@@ -21,6 +21,6 @@
 .category{
 	font-weight: 500;
 }
-.services_in_category h3{
+.services_in_category h3, .vacansies_list h3{
 	font-weight: 200;
 }

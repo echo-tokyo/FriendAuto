@@ -3,6 +3,7 @@ import Requests from './lists/requests/Requests'
 import Worksheets from './lists/worksheets/Worksheets'
 import AdminServices from './adminServices/AdminServices'
 import Vacansies from './vacansies/Vacansies'
+import AdminFooter from './adminFooter/AdminFooter'
 
 const Admin = () => {
 	return (
@@ -18,6 +19,7 @@ const Admin = () => {
 		<div className="content">
 			<Vacansies />
 		</div>
+		<AdminFooter />
 		</>
 	)
 }
