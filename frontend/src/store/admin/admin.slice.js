@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const adminSlice = createSlice({
 	name: 'admin',
 	initialState: {
-		selectedService: null
+		selectedService: null,
 	},
 	reducers: {
 		toDelete: (state, action) => {
-			const selectedElement = document.getElementById(action.payload.id);
+			const selectedElement = document.getElementById(action.payload);
 			if (selectedElement) {
 				if (selectedElement.classList.contains('checked')) {
 					selectedElement.classList.remove('checked');
@@ -18,7 +18,7 @@ const adminSlice = createSlice({
 						prevSelectedElement.classList.remove('checked');
 					}
 					selectedElement.classList.add('checked');
-					state.selectedService = action.payload.id;
+					state.selectedService = action.payload;
 				}
 			}
 		}

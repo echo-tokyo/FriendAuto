@@ -28,6 +28,10 @@ a{
 body::-webkit-scrollbar { width: 0; }
 body { -ms-overflow-style: none; }
 body { overflow: -moz-scrollbars-none; }
+.checked{
+	text-decoration:line-through;
+	color: red;
+}
 
 /* Кнопки */
 input[type="submit"]{

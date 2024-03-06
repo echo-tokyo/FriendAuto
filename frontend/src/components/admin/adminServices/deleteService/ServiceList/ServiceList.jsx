@@ -8,7 +8,7 @@ const ServiceList = ({category}) => {
 			<h3 className='category'>{category.category_name}:</h3>
 			<div className='services_in_category'>
 				{category.services.map((service, index) => (
-					<h3 style={{whiteSpace: 'pre'}} key={service.id} id={service.id} onClick={() => dispatch(toDelete(service))}>{index === category.services.length - 1 ? `${service.service_name}.` : `${service.service_name}, `}</h3>
+					<h3 style={{whiteSpace: 'pre'}} key={service.id} id={'1' + service.id} onClick={() => dispatch(toDelete('1' + service.id))}>{index === category.services.length - 1 ? `${service.service_name}.` : `${service.service_name}, `}</h3>
 				))}
 			</div>
 		</div>
