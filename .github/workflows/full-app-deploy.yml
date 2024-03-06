@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  checkout-changes:
+  deploy-changes:
     runs-on: self-hosted
 
     env:
@@ -15,6 +15,10 @@ jobs:
       DB_HOST: '172.17.0.1'
 
     steps:
+      - name: Down old dockerized app
+        run: |
+          docker-compose --file ./docker-compose.yml down
+
       - uses: actions/checkout@v3
 
       - name: Write Django Env
@@ -34,13 +38,6 @@ jobs:
           echo "DB_HOST=${{ env.DB_HOST }}" >> .env
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
 
-
-  deploy:
-    runs-on: self-hosted
-    needs: [ checkout-changes ]
-
-    steps:
       - name: Deploy updated repo
         run: |
-          docker-compose --file ./docker-compose.yml down
           docker-compose --file ./docker-compose.yml up --build -d
