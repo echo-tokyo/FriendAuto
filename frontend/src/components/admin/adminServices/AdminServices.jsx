@@ -4,10 +4,12 @@ import DeleteService from './deleteService/DeleteService'
 
 const AdminServices = () => {
 	return (
+		<>
 		<div className="adminServices_content">
 			<AddService />
 			<DeleteService />
 		</div>
+		</>
 	)
 }
 

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './FirstScreen.css'
 
 const FirstScreen = () => {
@@ -11,6 +11,7 @@ const FirstScreen = () => {
 				<a href="#advantages"><h4>ПРЕИМУЩЕСТВА</h4></a>
 				<a href="#discounts"><h4>СКИДКИ</h4></a>
 				<a href="#job"><h4>ТРУДОУСТРОЙСТВО</h4></a>
+				{localStorage.getItem('token') && <Link to='/admin/panel'><h4>АДМИН</h4></Link>}
 			</nav>
 			<div className="title">
 				<h1>Френд<span>-Авто</span></h1>

@@ -15,17 +15,13 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-
-.checked{
-	text-decoration:line-through;
-	color: red;
-}
 .categories_with_services{
 	margin: 50px;
 }
 .category{
 	font-weight: 500;
 }
-.services_in_category h3{
+.services_in_category h3, .vacansies_list h3{
 	font-weight: 200;
+	cursor: pointer;
 }

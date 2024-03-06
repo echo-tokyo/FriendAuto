@@ -1,4 +1,4 @@
-input[type="text"], input[type="number"], select{
+.admin_form input[type="text"], .admin_form input[type="number"], select{
 	background-color: #D2D2D2;
 }
 select{

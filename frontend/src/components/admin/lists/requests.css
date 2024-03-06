@@ -41,9 +41,13 @@
 .request_header{
 	text-align: center;
 }
+.request_header h3:last-child{
+	cursor: pointer;
+}
 .request_info{
 	display: flex;
-	gap: 30px;	
+	gap: 30px;
+	user-select: text;
 }
 .request_info h3{
 	font-weight: 200;
