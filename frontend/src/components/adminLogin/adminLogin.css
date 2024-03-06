@@ -22,12 +22,12 @@
 	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
-.admin_form{
+.admin_form_l, .admin_form{
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
 }
-.admin_form input[type="submit"]{
+.admin_form_l input[type="submit"], .admin_form input[type="submit"]{
 	margin-top: 10px;
 }
 .admin_background{
