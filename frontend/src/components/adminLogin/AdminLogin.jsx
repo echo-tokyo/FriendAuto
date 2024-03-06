@@ -12,13 +12,12 @@ const AdminLogin = () => {
 		}
 		axios.post('http://188.225.36.185/api/user/login/', userData)
 		.then(response => {
-			localStorage.setItem('token', response)
+			localStorage.setItem('token', response.data.token)
 			nav('/admin/panel')
 		})
 		.catch(error => {
 			console.error('Ошибка при входе', error)
 			document.querySelector('.admin_login').style.border = '1px solid red'
-			console.log(document.querySelector('.admin_login'))
 		})
 	}
 	return (
