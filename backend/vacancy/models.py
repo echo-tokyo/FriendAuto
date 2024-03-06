@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Vacancy(models.Model):
@@ -8,7 +9,11 @@ class Vacancy(models.Model):
         blank=False,
         unique=True
     )
-    short_desc = models.TextField(
+    photo = models.ImageField(
+        upload_to='vacancy_photos/',
+        default=settings.DEFAULT_VACANCY_PHOTO,
         null=True,
         blank=True
     )
+
+# СДЕЛАТЬ МИГРАЦИИ

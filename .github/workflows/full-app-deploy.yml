@@ -2,7 +2,7 @@ name: Full-App-CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "undefined-not-main-branch" ]
 
 jobs:
   deploy-changes:
