@@ -116,8 +116,6 @@ class DeleteServiceAPIView(APIView):
             service_id = data.get('id', None)
             service_obj = Service.objects.get(pk=service_id)
 
-            print(service_obj)
-
             # удаление услуги
             service_obj.delete()
         except Service.DoesNotExist:
