@@ -28,7 +28,7 @@ const ServicesCards = () => {
 					<h4>Подробнее</h4>
 				</div>
 			</div>
-			<div className="card" onClick={() => nav('/services/signup/3')}>
+			<div className="card" onClick={() => nav('/services/signup/4')}>
 				<img src="../../../../public/kpp.png" alt="" />
 				<div className="card_text">
 					<h3>Ремонт КПП</h3>
@@ -36,7 +36,7 @@ const ServicesCards = () => {
 					<h4>Подробнее</h4>
 				</div>
 			</div>
-			<div className="card" onClick={() => nav('/services/signup/4')}>
+			<div className="card" onClick={() => nav('/services/signup/5')}>
 				<img src="../../../../public/kyzov.png" alt="" />
 				<div className="card_text">
 					<h3>Кузов и прочее</h3>
