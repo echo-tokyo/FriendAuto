@@ -14,10 +14,10 @@ const Router = () => {
 				<ScrollToTop />
 				<Routes>
 					<Route path='/' element={<MainPage />} />
-					<Route path='services' element={<ServicesPage />} />
-					<Route path='services/signup/:id' element={<ServiceSignUpPage />} />
-					<Route path='admin' element={<AdminLogin />} />
-					<Route path='admin/panel' element={<Admin />} />
+					<Route path='/services' element={<ServicesPage />} />
+					<Route path='/services/signup/:id' element={<ServiceSignUpPage />} />
+					<Route path='/admin' element={<AdminLogin />} />
+					<Route path='/admin/panel' element={<Admin />} />
 					<Route path='*' element={<h2 style={{display:'flex', justifyContent:'center'}}>404 Page not found</h2>} />
 				</Routes>
 			</Fragment>

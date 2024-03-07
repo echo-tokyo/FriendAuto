@@ -8,7 +8,7 @@ const ServicesCard = ({card}) => {
 			dispatch(toggleModal())
 			dispatch(serviceName(card.name))
 		}}>
-			<img src={card.image} alt="image" />
+			<img src='../../../../../public/service.png' alt="image" />
 			<div className="card_text">
 				<h3>{card.name}</h3>
 				<h4>Записаться</h4>

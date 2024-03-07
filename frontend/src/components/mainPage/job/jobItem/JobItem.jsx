@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { backgroundToggle, toggleModal2 } from '../../../../store/modal/modal.slice'
+import { backgroundToggle, toggleModal2, serviceName } from '../../../../store/modal/modal.slice'
 import '../job.css'
 
 const JobItem = ({ jobItem }) => {
@@ -13,9 +13,10 @@ const JobItem = ({ jobItem }) => {
 					e.preventDefault()
 					dispatch(toggleModal2())
 					dispatch(backgroundToggle())
+					dispatch(serviceName(jobItem.title))
 				}}/>
 			</div>
-			<img src={jobItem.image} alt="" />
+			<img src={jobItem.photo_url} alt="" />
 		</div>
 	)
 }

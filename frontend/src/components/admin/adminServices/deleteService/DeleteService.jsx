@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import './deleteService.css'
-import servicesWithCategories from '../../../services&categories.data'
 import ServiceList from './ServiceList/ServiceList'
 
-const DeleteService = () => {
-	const [categories, setCategories] = useState(servicesWithCategories)
+const DeleteService = ({categorizedServices}) => {
 	return (
 		<div className="deleteService">
 			<div className="addService_title">
@@ -12,9 +9,9 @@ const DeleteService = () => {
 				<h3>Выберите услугу соответствующей категории</h3>
 			</div>
 			<div className="deleteService_field">
-				{categories.map(category => <ServiceList key={category.id} setCategories={setCategories} category={category}/>)}
+				{categorizedServices.map(category => <ServiceList key={category.category_id} category={category}/>)}
 			</div>
-			<input type="submit" value='Удалить'/>
+			<input type="submit" value='Удалить' />
 		</div>
 	)
 }
