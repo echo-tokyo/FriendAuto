@@ -1,7 +1,7 @@
 import '../../servicesPage/header/header.css'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({categoryName}) => {
 	const nav = useNavigate()
 	return (
 		<header>
@@ -25,7 +25,7 @@ const Header = () => {
 				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M7.5 15H22.5M22.5 15L16.25 8.75M22.5 15L16.25 21.25" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 				</svg>
-				<h3><span>Ремонт двигателя</span></h3>
+				<h3><span>{categoryName}</span></h3>
 			</div>
 		</header>
 	)

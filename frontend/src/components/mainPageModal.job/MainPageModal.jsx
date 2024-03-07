@@ -1,14 +1,16 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { backgroundToggle, toggleModal2 } from '../../store/modal/modal.slice'
 
 const MainPageModal = () => {
 	const dispatch = useDispatch()
+	const selectedServiceName = useSelector((state) => state.modal.serviceName);
+
 	return (
 		<div className="modal">
 			<div className="modal_header">
 				<div className="modal_title">
 					<h2><span>А</span>нкета</h2>
-					<h3>Оставьте свою анкету, а мы вам перезвоним</h3>
+					<h3>Оставьте свою анкету по вакансии &apos;{selectedServiceName}&apos;, а мы вам перезвоним</h3>
 				</div>
 				<svg style={{cursor: "pointer"}} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => {
 					dispatch(toggleModal2())

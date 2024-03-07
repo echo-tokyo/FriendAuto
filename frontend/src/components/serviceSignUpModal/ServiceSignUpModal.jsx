@@ -5,6 +5,7 @@ import { toggleModal } from '../../store/modal/modal.slice'
 const ServiceSignUpModal = () => {
 	const dispatch = useDispatch()
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
+	
 	return (
 		<div className="modal">
 			<div className="modal_header">
