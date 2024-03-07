@@ -24,11 +24,13 @@ class Vacancy(models.Model):
             return f'http://{settings.IP_OR_DNS_SERVER}{self.photo.url}'
 
     def delete(self, *args, **kwargs):
-        full_file_path = f'{settings.BASE_DIR}/media/{self.photo}'
+        photo = self.photo
 
-        try:
-            remove_file(full_file_path)
-        except FileNotFoundError:
-            print('ERROR')
+        if photo != 'vacancy_photos/default_worker.png':
+            full_file_path = f'{settings.BASE_DIR}/media/{photo}'
+            try:
+                remove_file(full_file_path)
+            except FileNotFoundError:
+                print('ERROR')
 
         super(Vacancy, self).delete(*args, **kwargs)
