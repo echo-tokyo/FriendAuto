@@ -10,7 +10,8 @@ def core_exception_handler(exc, context):
     # словарь с видом ошибки и её обработчиком
     handlers = {
         # service
-        'DropValidateError': _handle_my_error,
+        'DropServiceError': _handle_my_error,
+        'CreateServiceError': _handle_my_error,
         # category
         'CategoryValidateError': _handle_my_error,
         # user
@@ -20,6 +21,9 @@ def core_exception_handler(exc, context):
         'UserAccessForbidden': _handle_my_error,
         # token
         'ServerProcessError': _handle_my_error,
+        # vacancy
+        'DropVacancyError': _handle_my_error,
+        'CreateVacancyError': _handle_my_error,
     }
     # Определить тип текущего исключения. Мы воспользуемся этим сразу далее,
     # чтобы решить, делать ли это самостоятельно или отдать эту работу DRF.
