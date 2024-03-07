@@ -14,7 +14,7 @@ http://188.225.36.185/api/user/login/
 
 > body 👇 (JSON)
 
-```json lines
+```json5
 {
     // логин пользователя
     "username": "admin",
@@ -27,7 +27,7 @@ http://188.225.36.185/api/user/login/
 
 ### _Пример ответа сервера (JSON):_
 
-```json lines
+```json5
 {
     // токен юзера
     "token": "eyJhbGpXVCJ9.eyJpZCI6NSMjMyfQ.yMy6LZ0QA8JsB3LLl0"

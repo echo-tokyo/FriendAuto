@@ -1,9 +1,9 @@
-# Удаление услуги
+# Удаление вакансии
 
 ### _URL:_
 
 ```text
-http://188.225.36.185/api/service/delete-service/
+http://188.225.36.185/api/vacancy/delete-vacancy/
 ```
 
 ### _Метод:_ DELETE
@@ -16,8 +16,8 @@ http://188.225.36.185/api/service/delete-service/
 
 ```json5
 {
-    // id услуги
-    "id": 5
+    // id вакансии
+    "id": 3
 }
 ```
 

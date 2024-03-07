@@ -14,7 +14,7 @@ http://188.225.36.185/api/service/add-service/
 
 > body 👇 (JSON)
 
-```json lines
+```json5
 {
     // название услуги
     "name": "Ремонт трубопровода в лифте",
@@ -27,7 +27,7 @@ http://188.225.36.185/api/service/add-service/
 
 > headers 👇
 
-```json lines
+```json5
 {
     // токен юзера
     "Authorization": "Bearer eyJhbGpXVCJ9.eyJpZCI6NSMjMyfQ.yMy6LZ0QA8JsB3LLl0"
@@ -38,7 +38,7 @@ http://188.225.36.185/api/service/add-service/
 
 ### _Пример ответа сервера (JSON):_
 
-```json lines
+```json5
 {
     // id услуги
     "id": 5,

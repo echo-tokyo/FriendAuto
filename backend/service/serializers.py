@@ -28,6 +28,14 @@ class GetServicesSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "price")
 
 
+class GetServicesByCategoriesSerializer(serializers.ModelSerializer):
+    """Serialization of getting services of category and name of category"""
+
+    class Meta:
+        model = Service
+        fields = ("id", "name")
+
+
 class AddServiceSerializer(serializers.ModelSerializer):
     """Serialization of new service adding"""
 

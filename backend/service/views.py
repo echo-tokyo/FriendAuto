@@ -5,7 +5,7 @@ from rest_framework.request import Request
 from rest_framework.views import APIView
 
 from core.errors import DropServiceError, CategoryValidateError
-from .serializers import (GetCategoriesSerializer, GetServicesSerializer,
+from .serializers import (GetCategoriesSerializer, GetServicesSerializer, GetServicesByCategoriesSerializer,
                           AddServiceSerializer)
 from .models import Category, Service
 
@@ -52,6 +52,33 @@ class GetServicesAPIView(APIView):
         return Response(data=response_data, status=status.HTTP_200_OK)
 
 
+class GetAllServicesByCategoriesAPIView(APIView):
+    """Get all services categorized by category, and get name and id of category"""
+
+    permission_classes = (AllowAny,)
+    serializer_class = GetServicesByCategoriesSerializer
+
+    def get(self, request: Request) -> Response:
+        # получение всех объектов категорий
+        all_categories = Category.objects.all().order_by('pk')
+        # получение всех объектов услуг
+        all_services = Service.objects.all()
+
+        response_data_list = []
+        for category in all_categories:
+            category_services = all_services.filter(category=category.pk)
+            serializer = self.serializer_class(instance=category_services, many=True)
+
+            response_data = {
+                "category_id": category.pk,
+                "category_name": category.name,
+                "services": serializer.data
+            }
+            response_data_list.append(response_data)
+
+        return Response(data=response_data_list, status=status.HTTP_200_OK)
+
+
 class AddServiceAPIView(APIView):
     """Add new service to definite category"""
 
@@ -88,8 +115,6 @@ class DeleteServiceAPIView(APIView):
             # достаём id услуги из запроса и получаем объект услуги
             service_id = data.get('id', None)
             service_obj = Service.objects.get(pk=service_id)
-
-            print(service_obj)
 
             # удаление услуги
             service_obj.delete()

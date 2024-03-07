@@ -68,3 +68,26 @@ class CategoryValidateError(APIException):
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
     default_detail = _('Validate error')
     default_code = 'category_validate_error'
+
+
+class DropVacancyError(APIException):
+    """
+    about: vacancy
+    Ошибка при удалении вакансии из БД
+    """
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = _('Vacancy error')
+    default_code = 'drop_vacancy_error'
+
+
+class CreateVacancyError(APIException):
+    """
+    about: vacancy
+    Ошибка при создании вакансии
+    """
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = _('Vacancy error')
+    default_code = 'create_vacancy_error'
+
