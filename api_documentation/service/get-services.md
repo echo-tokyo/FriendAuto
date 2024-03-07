@@ -20,7 +20,7 @@ http://188.225.36.185/api/service/get-categories/
 
 ### _Пример ответа сервера (JSON):_
 
-```json lines
+```json5
 {
     // название категории
     "category_name": "Ремонт КПП",

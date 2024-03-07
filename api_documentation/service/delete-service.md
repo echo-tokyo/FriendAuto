@@ -14,7 +14,7 @@ http://188.225.36.185/api/service/delete-service/
 
 > body 👇 (JSON)
 
-```json lines
+```json5
 {
     // id услуги
     "id": 5
@@ -23,7 +23,7 @@ http://188.225.36.185/api/service/delete-service/
 
 > headers 👇
 
-```json lines
+```json5
 {
     // токен юзера
     "Authorization": "Bearer eyJhbGpXVCJ9.eyJpZCI6NSMjMyfQ.yMy6LZ0QA8JsB3LLl0"
@@ -34,7 +34,7 @@ http://188.225.36.185/api/service/delete-service/
 
 ### _Пример ответа сервера:_
 
-```json
+```json5
 ```
 
 <hr>
