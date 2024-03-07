@@ -1,11 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+// import servicesWithCategories from '../../components/services&categories.data';
 
 const adminSlice = createSlice({
 	name: 'admin',
 	initialState: {
 		selectedService: null,
+		categorizedServices: []
 	},
 	reducers: {
+		getCategorizedServices: (state, action) => {
+			state.categorizedServices = action.payload
+		},
 		toDelete: (state, action) => {
 			const selectedElement = document.getElementById(action.payload);
 			if (selectedElement) {
@@ -21,9 +26,9 @@ const adminSlice = createSlice({
 					state.selectedService = action.payload;
 				}
 			}
-		}
+		},
 	}
 })
 
-export const {toDelete} = adminSlice.actions
+export const {getCategorizedServices, toDelete} = adminSlice.actions
 export default adminSlice.reducer
