@@ -35,6 +35,8 @@ services:
       context: ./nginx
       dockerfile: DockerfileNginx
     container_name: friend_auto_nginx
+    volumes:
+      - "mediafiles:/media"
     ports:
       - "80:80"
     networks:
