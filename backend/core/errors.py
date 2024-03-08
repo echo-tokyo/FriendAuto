@@ -65,9 +65,31 @@ class CategoryValidateError(APIException):
     Ошибка при обработке категории
     """
 
-    status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    status_code = status.HTTP_400_BAD_REQUEST
     default_detail = _('Validate error')
     default_code = 'category_validate_error'
+
+
+class ServiceValidateError(APIException):
+    """
+    about: service
+    Ошибка при обработке услуги
+    """
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = _('Validate error')
+    default_code = 'service_validate_error'
+
+
+class ServiceRecordValidateError(APIException):
+    """
+    about: serviceRecord
+    Ошибка при обработке записи на услугу
+    """
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = _('Validate error')
+    default_code = 'service_record_validate_error'
 
 
 class DropVacancyError(APIException):
@@ -91,3 +113,13 @@ class CreateVacancyError(APIException):
     default_detail = _('Vacancy error')
     default_code = 'create_vacancy_error'
 
+
+class CreateServiceRecordError(APIException):
+    """
+    about: serviceRecord
+    Ошибка при создании записи на услугу
+    """
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = _('Service record error')
+    default_code = 'create_service_record_error'

@@ -25,7 +25,7 @@ urlpatterns = [
     # управление вакансиями
     path('api/vacancy/', include('vacancy.urls')),
     # управление записями на услуги
-    path('api/service_record/', include('service_record.urls')),
+    path('api/service-record/', include('service_record.urls')),
     # управление анкетами на вакансии
     path('api/worksheet/', include('worksheet.urls')),
 ]
