@@ -44,7 +44,6 @@ const AdminServices = () => {
 			document.querySelector('.addserv').style.border = '3px solid red'
 		})
 	}
-
 	return (
 		<>
 		<div className="adminServices_content">
