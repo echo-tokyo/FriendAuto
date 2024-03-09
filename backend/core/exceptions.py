@@ -25,9 +25,13 @@ def core_exception_handler(exc, context):
         # vacancy
         'DropVacancyError': _handle_my_error,
         'CreateVacancyError': _handle_my_error,
+        'VacancyValidateError': _handle_my_error,
         # service record
         'CreateServiceRecordError': _handle_my_error,
         'ServiceRecordValidateError': _handle_my_error,
+        # worksheet
+        'CreateWorksheetError': _handle_my_error,
+        'WorksheetValidateError': _handle_my_error,
     }
     # Определить тип текущего исключения. Мы воспользуемся этим сразу далее,
     # чтобы решить, делать ли это самостоятельно или отдать эту работу DRF.
@@ -58,7 +62,7 @@ def _handle_invalid_data_validation_error(exc, context, response):
     new_response_data = {}
 
     # поля для проверки в запросе
-    fields = ['email', 'password', 'old_password', 'new_password']
+    fields = ['email', 'password']
     for field in fields:
         # если есть ошибки, связанные с field, то в цикле перебираем их и записываем в отдельную переменную
         if field in response_data:

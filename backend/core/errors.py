@@ -81,6 +81,17 @@ class ServiceValidateError(APIException):
     default_code = 'service_validate_error'
 
 
+class VacancyValidateError(APIException):
+    """
+    about: vacancy
+    Ошибка при обработке вакансии
+    """
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = _('Validate error')
+    default_code = 'vacancy_validate_error'
+
+
 class ServiceRecordValidateError(APIException):
     """
     about: serviceRecord
@@ -90,6 +101,17 @@ class ServiceRecordValidateError(APIException):
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = _('Validate error')
     default_code = 'service_record_validate_error'
+
+
+class WorksheetValidateError(APIException):
+    """
+    about: worksheet
+    Ошибка при обработке анкеты
+    """
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = _('Validate error')
+    default_code = 'worksheet_validate_error'
 
 
 class DropVacancyError(APIException):
@@ -123,3 +145,14 @@ class CreateServiceRecordError(APIException):
     status_code = status.HTTP_409_CONFLICT
     default_detail = _('Service record error')
     default_code = 'create_service_record_error'
+
+
+class CreateWorksheetError(APIException):
+    """
+    about: worksheet
+    Ошибка при создании анкеты
+    """
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = _('Worksheet error')
+    default_code = 'create_worksheet_error'
