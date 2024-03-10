@@ -7,12 +7,13 @@ import axios from 'axios'
 const Requests = () => {
 	const [requests, setRequests] = useState(requestsData)
 	const [isListOpen, setIsListOpen] = useState(false)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/service-record/get-service-records/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			console.log(response.data)
 			setRequests(response.data)
+			setIsLoading(false)
 		})
 		.catch((error) => {
 			console.error('Ошибка при поулчении заявок', error)
@@ -26,8 +27,14 @@ const Requests = () => {
 		</div>
 		{isListOpen && (
 			<div className="requests_list">
-				{requests.length > 0 && (
-					requests.map(request => <Request key={request.id} setRequests={setRequests} request={request}/>)
+				{isLoading ? (
+					<h3 style={{display: 'flex', justifyContent: 'center'}}>Загрузка</h3>
+				) : (
+					<>
+					{requests.length > 0 && (
+						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request}/>)
+					)}
+					</>
 				)}
 			</div>
 		)}

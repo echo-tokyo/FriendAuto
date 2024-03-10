@@ -6,12 +6,13 @@ import axios from 'axios'
 const Worksheets = () => {
 	const [worksheets, setWorksheets] = useState(worksheetsData)
 	const [isListOpen, setIsListOpen] = useState(false)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/worksheet/get-worksheets/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			console.log(response.data)
 			setWorksheets(response.data)
+			setIsLoading(false)
 		})
 		.catch((error) => {
 			console.error('Ошибка при поулчении заявок', error)
@@ -25,8 +26,14 @@ const Worksheets = () => {
 		</div>
 		{isListOpen && (
 			<div className="requests_list">
-				{worksheets.length > 0 && (
-					worksheets.map(worksheet => <Worksheet key={worksheet.id} setWorksheets={setWorksheets} worksheet={worksheet}/>)
+				{isLoading ? (
+					<h3 style={{display: 'flex', justifyContent: 'center'}}>Загрузка</h3>
+				): (
+					<>
+					{worksheets.length > 0 && (
+						worksheets.map(worksheet => <Worksheet key={worksheet.id} setWorksheets={setWorksheets} worksheet={worksheet}/>)
+					)}
+					</>
 				)}
 			</div>
 		)}

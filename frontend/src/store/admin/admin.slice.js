@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import servicesWithCategories from '../../components/services&categories.data';
 
 const adminSlice = createSlice({
 	name: 'admin',

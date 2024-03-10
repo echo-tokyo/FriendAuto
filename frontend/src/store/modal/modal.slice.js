@@ -7,7 +7,7 @@ const modalSlice = createSlice({
 		isModalOpen2: false,
 		isModalOpen3: false,
 		serviceName: '',
-		currentServiceId: Number
+		currentServiceId: ''
 	},
 	reducers: {
 		toggleModal: (state) => {
