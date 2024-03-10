@@ -7,23 +7,22 @@ const DeleteService = ({categorizedServices, setCategorizedServices}) => {
 
 	const selectedService = useSelector((state) => state.admin.selectedService)
 	const delService = () => {
-		console.log(selectedService)
 		axios.delete('http://188.225.36.185/api/service/delete-service/', {
 			data: {id: selectedService.slice(1)},
 			headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
 		})
 		.then(() => {
-			// TODO: тут че то не работает
-			setCategorizedServices(prevCategorizedServices => {
-				return prevCategorizedServices.map(category => {
+			setCategorizedServices((prevCategorizedServices) => {
+				return prevCategorizedServices.map((category) => {
 					return {
-						category_name: category.category_name,
-						services: category.services.filter(service => service.id !== selectedService.slice(1))
-					}
-				})
-			})
+						...category,
+						services: category.services.filter((service) => service.id !== Number(selectedService.slice(1)))
+					};
+				});
+			});
 		})
 		.catch((error) => {
+			//TODO: сделать стили при ошибки
 			console.error('Ошибка при удалении услуги', error)
 		})
 	}
