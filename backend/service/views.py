@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
 
-from core.errors import DropServiceError, CategoryValidateError
+from core.errors.service_errors import DropServiceError, CategoryValidateError
 from .serializers import (GetCategoriesSerializer, GetServicesSerializer, GetServicesByCategoriesSerializer,
                           AddServiceSerializer)
 from .models import Category, Service

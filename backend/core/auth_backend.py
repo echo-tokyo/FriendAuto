@@ -3,7 +3,7 @@ import jwt
 from django.conf import settings
 from rest_framework import authentication
 
-from .errors import UserAccessForbidden
+from .errors.user_errors import UserAccessForbidden
 from user.models import User
 from user.service import delete_one_token
 

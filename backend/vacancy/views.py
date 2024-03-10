@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
 
-from core.errors import DropVacancyError
+from core.errors.vacancy_errors import DropVacancyError
 from .models import Vacancy
 from .serializers import AddVacancySerializer, GetVacanciesSerializer
 

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.errors import CreateWorksheetError
+from core.errors.worksheet_errors import CreateWorksheetError
 from .models import Worksheet
 
 
