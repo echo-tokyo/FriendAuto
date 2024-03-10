@@ -6,13 +6,11 @@ const AdminHeader = () => {
 	const nav = useNavigate()
 	const logout = () => {
 		axios.post('http://188.225.36.185/api/user/logout/', null, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
-		.then(() => {
-			localStorage.removeItem('token')
-			nav('/admin')
-		})
 		.catch((error) => {
 			console.error('Ошибка при выходе', error)
 		})
+		localStorage.removeItem('token')
+		nav('/admin')
 	}
 	return (
 		<div className="header">

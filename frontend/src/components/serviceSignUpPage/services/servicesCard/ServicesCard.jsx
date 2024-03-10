@@ -1,4 +1,4 @@
-import { toggleModal, serviceName } from '../../../../store/modal/modal.slice'
+import { toggleModal, serviceName, currentServiceId } from '../../../../store/modal/modal.slice'
 import { useDispatch } from 'react-redux'
 
 const ServicesCard = ({card}) => {
@@ -7,6 +7,7 @@ const ServicesCard = ({card}) => {
 		<div className="card" onClick={() => {
 			dispatch(toggleModal())
 			dispatch(serviceName(card.name))
+			dispatch(currentServiceId(card.id))
 		}}>
 			<img src='../../../../../public/service.png' alt="image" />
 			<div className="card_text">

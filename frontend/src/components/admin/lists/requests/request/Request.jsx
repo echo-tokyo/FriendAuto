@@ -7,9 +7,9 @@ const Request = ({request}) => {
 			</div>
 			<div className="request_info_wrapper">
 				<div className="request_info">
-					<h3><span>Марка машины:</span> {request.car}</h3>
-					<h3><span>Номер машины:</span> {request.number}</h3>
-					<h3><span>Номер телефона:</span> {request.phone}</h3>
+					<h3><span>Марка машины:</span> {request.car_brand}</h3>
+					<h3><span>Номер машины:</span> {request.car_number}</h3>
+					<h3><span>Номер телефона:</span> {request.client_phone}</h3>
 				</div>
 				<div className="border"></div>
 			</div>

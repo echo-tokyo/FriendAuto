@@ -6,7 +6,6 @@ import axios from 'axios'
 
 const AdminServices = () => {
 	const [categorizedServices, setCategorizedServices] = useState([])
-
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/service/get-all-categorized-services/')
 		.then(response => {
@@ -15,7 +14,7 @@ const AdminServices = () => {
 		.catch(error => {
 			console.error('Ошибка при получении услуг', error)
 		})
-	})
+	}, [])
 
 	const AddCategorizedService = (e) => {
 		e.preventDefault()
@@ -27,6 +26,7 @@ const AdminServices = () => {
 		axios.post('http://188.225.36.185/api/service/add-service/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			document.querySelector('.addserv').style.border = 'none'
+			// TODO: тут че то не работает
 			setCategorizedServices((prevCategorizedServices) => {
 				return prevCategorizedServices.map(category => {
 				if (category.category_id === response.data.id) {
@@ -48,7 +48,7 @@ const AdminServices = () => {
 		<>
 		<div className="adminServices_content">
 			<AddService AddCategorizedService={AddCategorizedService}/>
-			<DeleteService categorizedServices={categorizedServices}/>
+			<DeleteService categorizedServices={categorizedServices} setCategorizedServices={setCategorizedServices}/>
 		</div>
 		</>
 	)

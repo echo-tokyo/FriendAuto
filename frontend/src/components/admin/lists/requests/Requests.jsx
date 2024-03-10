@@ -1,11 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../requests.css'
 import Request from './request/Request'
 import requestsData from '../../../requests.data'
+import axios from 'axios'
 
 const Requests = () => {
 	const [requests, setRequests] = useState(requestsData)
 	const [isListOpen, setIsListOpen] = useState(false)
+
+	useEffect(() => {
+		axios.get('http://188.225.36.185/api/service-record/get-service-records/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		.then((response) => {
+			console.log(response.data)
+			setRequests(response.data)
+		})
+		.catch((error) => {
+			console.error('Ошибка при поулчении заявок', error)
+		})
+	}, [])
+
 	return (
 		<>
 		<div className="requests" onClick={() => setIsListOpen(!isListOpen)}>

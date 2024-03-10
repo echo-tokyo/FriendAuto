@@ -6,7 +6,8 @@ const modalSlice = createSlice({
 		isModalOpen: false,
 		isModalOpen2: false,
 		isModalOpen3: false,
-		serviceName: ''
+		serviceName: '',
+		currentServiceId: Number
 	},
 	reducers: {
 		toggleModal: (state) => {
@@ -46,9 +47,12 @@ const modalSlice = createSlice({
 		},
 		serviceName: (state, action) => {
 			state.serviceName = action.payload
+		},
+		currentServiceId: (state, action) => {
+			state.currentServiceId = action.payload
 		}
 	}
 })
 
-export const {toggleModal, toggleModal2, toggleModal3, backgroundToggle, serviceName} = modalSlice.actions
+export const {toggleModal, toggleModal2, toggleModal3, backgroundToggle, serviceName, currentServiceId} = modalSlice.actions
 export default modalSlice.reducer
