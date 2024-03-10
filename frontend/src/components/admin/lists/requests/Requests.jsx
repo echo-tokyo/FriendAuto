@@ -31,8 +31,10 @@ const Requests = () => {
 					<h3 style={{display: 'flex', justifyContent: 'center'}}>Загрузка</h3>
 				) : (
 					<>
-					{requests.length > 0 && (
+					{requests.length > 0 ? (
 						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request}/>)
+					): (
+						<h3 style={{display: 'flex', justifyContent: 'center'}}>Записей нет</h3>
 					)}
 					</>
 				)}

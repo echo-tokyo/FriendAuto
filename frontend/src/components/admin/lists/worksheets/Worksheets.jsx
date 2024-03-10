@@ -30,8 +30,10 @@ const Worksheets = () => {
 					<h3 style={{display: 'flex', justifyContent: 'center'}}>Загрузка</h3>
 				): (
 					<>
-					{worksheets.length > 0 && (
+					{worksheets.length > 0 ? (
 						worksheets.map(worksheet => <Worksheet key={worksheet.id} setWorksheets={setWorksheets} worksheet={worksheet}/>)
+					): (
+						<h3 style={{display: 'flex', justifyContent: 'center'}}>Записей нет</h3>
 					)}
 					</>
 				)}
