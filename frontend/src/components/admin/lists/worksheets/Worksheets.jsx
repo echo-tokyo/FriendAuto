@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import Worksheet from './worksheet/Worksheet.jsx'
-import worksheetsData from '../../../worksheets.data..js'
 import axios from 'axios'
 
 const Worksheets = () => {
-	const [worksheets, setWorksheets] = useState(worksheetsData)
+	const [worksheets, setWorksheets] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
 
