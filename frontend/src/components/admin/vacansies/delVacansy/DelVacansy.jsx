@@ -1,30 +1,15 @@
 import './delVacansy.css'
-import { useEffect, useState } from 'react'
 import VacansiesList from './vacansiesList/VacansiesList'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
-const DelVacansy = () => {
-	const [vacansiesList, setVacansiesList] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
-
-	useEffect(() => {
-		axios.get('http://188.225.36.185/api/vacancy/get-vacancies/')
-		.then((response) => {
-			setVacansiesList(response.data)
-			setIsLoading(false)
-		})
-		.catch((error) => {
-			console.error('Ошибпри при получении вакансий', error)
-		})
-	}, [])
-
+const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
 	const selectedService = useSelector((state) => state.admin.selectedService)
+	
 	const delVacansy = () => {
 		axios.delete('http://188.225.36.185/api/vacancy/delete-vacancy/', {data: {id: selectedService.slice(1)}, headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then(() => {
-			//TODO: пофиксить
-			setVacansiesList((prev) => prev.filter((item) => item.id !== selectedService.slice(1)))
+			setVacansiesList(prev => prev.filter(el => el.id != selectedService.slice(1)))
 		})
 		.catch((error) => {
 			//TODO: сделать стили при ошибки

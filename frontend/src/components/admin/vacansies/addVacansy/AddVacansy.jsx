@@ -1,7 +1,7 @@
 import axios from 'axios';
 import './addVacansy.css'
 
-const AddVacansy = () => {
+const AddVacansy = ({setVacansiesList}) => {
 	
 	const addVacansy = (e) => {
 		e.preventDefault()
@@ -11,7 +11,7 @@ const AddVacansy = () => {
 
 		axios.post('http://188.225.36.185/api/vacancy/add-vacancy/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			console.log(response)
+			setVacansiesList((prev) => [...prev, response.data])
 		})
 		.catch((error) => {
 			console.error('Ошибка при отправке фото', error)
