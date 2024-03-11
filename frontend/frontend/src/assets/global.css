@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* Общее */
+html, body{
+	font-family: 'Inter', sans-serif;
+	height: 100%;
+	cursor: default;
+	scroll-behavior: smooth;
+	user-select: none;
+}
+.content{
+	margin-left: 160px;
+	margin-right: 160px;
+}
+span{
+	color: #ffca0e;
+}
+.card, .reviews_title h3, .footer_map img, Link, nav h4{
+	cursor: pointer;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0; 
+}
+a{
+	text-decoration: none;
+}
+body::-webkit-scrollbar { width: 0; }
+body { -ms-overflow-style: none; }
+body { overflow: -moz-scrollbars-none; }
+.checked{
+	text-decoration:line-through;
+	color: red;
+}
+
+/* Кнопки */
+input[type="submit"]{
+	border: 4px dashed #ffca0e;
+	border-radius: 50px;
+	width: 200px;
+	height: 60px;
+	background: none;
+	font-size: 26px;
+	font-weight: 300;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+input[type="submit"]:hover{
+	transform: scale(1.025);
+}
+input[type="text"], input[type="email"], input[type="password"], select, input[type="number"], label{
+	width: 320px;
+	height: 70px;
+	border-radius: 20px;
+	background-color: #e7e7e7;
+	font-size: 26px;
+	font-weight: 350;
+	text-align: center;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+label:hover{
+	cursor: pointer;
+}
+label:active{
+	border: 2px solid black;
+}
+.modal input[type="submit"], .admin_form_l input[type="submit"], .admin_form input[type="submit"], .deleteService input[type="submit"],  .admin_vacansy_form input[type="submit"]{
+	width: 320px;
+	height: 70px;
+	border-radius: 20px;
+	background:#ffca0e;
+	font-size: 26px;
+	font-weight: 350;
+	text-align: center;
+	border: none;
+}
+input[type="submit"]:active{
+	border: 2px solid black;
+}
+.modal input[type="submit"]:hover{
+	transform: none;
+}
+#fileUpload{
+	display: none;
+}
+
+/* Анимации */
+img{
+	transition: 0.5s ease;
+}
+img:hover{
+	transform: scale(1.025);
+}
+
+/* Шрифты */
+h1{
+	font-size: 100px;
+	font-weight: 800;
+}
+h2{
+	font-size: 50px;
+	font-weight: 800;
+}
+p{
+	font-size: 38px;
+	font-weight: 500;
+}
+h3{
+	font-size: 26px;
+	font-weight: 350;
+}
+h4{
+	font-size: 16px;
+	font-weight: 300;
+}
