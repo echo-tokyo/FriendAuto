@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import '../requests.css'
 import Request from './request/Request'
-import requestsData from '../../../requests.data'
 import axios from 'axios'
 
 const Requests = () => {
-	const [requests, setRequests] = useState(requestsData)
+	const [requests, setRequests] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
 
@@ -32,7 +31,7 @@ const Requests = () => {
 				) : (
 					<>
 					{requests.length > 0 ? (
-						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request}/>)
+						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request} />)
 					): (
 						<h3 style={{display: 'flex', justifyContent: 'center'}}>Записей нет</h3>
 					)}
