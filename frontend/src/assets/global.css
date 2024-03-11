@@ -48,7 +48,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
 	transform: scale(1.025);
 }
-input[type="text"], input[type="email"], input[type="password"], select, input[type="number"]{
+input[type="text"], input[type="email"], input[type="password"], select, input[type="number"], label{
 	width: 320px;
 	height: 70px;
 	border-radius: 20px;
@@ -57,6 +57,15 @@ input[type="text"], input[type="email"], input[type="password"], select, input[t
 	font-weight: 350;
 	text-align: center;
 	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+label:hover{
+	cursor: pointer;
+}
+label:active{
+	border: 2px solid black;
 }
 .modal input[type="submit"], .admin_form_l input[type="submit"], .admin_form input[type="submit"], .deleteService input[type="submit"],  .admin_vacansy_form input[type="submit"]{
 	width: 320px;
@@ -68,8 +77,14 @@ input[type="text"], input[type="email"], input[type="password"], select, input[t
 	text-align: center;
 	border: none;
 }
+input[type="submit"]:active{
+	border: 2px solid black;
+}
 .modal input[type="submit"]:hover{
 	transform: none;
+}
+#fileUpload{
+	display: none;
 }
 
 /* Анимации */
