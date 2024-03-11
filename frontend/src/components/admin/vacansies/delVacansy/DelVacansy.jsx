@@ -1,10 +1,21 @@
 import './delVacansy.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import VacansiesList from './vacansiesList/VacansiesList'
-import { vacansies } from '../../../vacansies.data'
+import axios from 'axios'
 
 const DelVacansy = () => {
-	const [vacansiesList, setVacansiesList] = useState(vacansies)
+	const [vacansiesList, setVacansiesList] = useState([])
+
+	useEffect(() => {
+		axios.get('http://188.225.36.185/api/vacancy/get-vacancies/')
+		.then((response) => {
+			setVacansiesList(response.data)
+		})
+		.catch((error) => {
+			console.error('Ошибпри при получении вакансий', error)
+		})
+	}, [])
+
 	return (
 		<div className="deleteService">
 			<div className="addService_title">
