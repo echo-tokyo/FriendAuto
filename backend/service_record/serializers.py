@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.errors import CreateServiceRecordError
+from core.errors.service_record_errors import CreateServiceRecordError
 from .models import ServiceRecord
 
 

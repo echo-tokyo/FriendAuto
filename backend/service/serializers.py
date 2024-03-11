@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.errors import CreateServiceError
+from core.errors.service_errors import CreateServiceError
 from .models import Category, Service
 
 

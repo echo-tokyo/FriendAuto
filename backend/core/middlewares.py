@@ -3,7 +3,6 @@ from rest_framework import status
 from rest_framework.request import Request
 
 from user.models import Token
-# from .errors import TokenNDoesNotExist
 
 
 class CheckTokenMiddleware:

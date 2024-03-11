@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.errors import CreateVacancyError
+from core.errors.vacancy_errors import CreateVacancyError
 from .models import Vacancy
 
 

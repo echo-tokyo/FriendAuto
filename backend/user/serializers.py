@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
-from core.errors import UserValidateError
+from core.errors.user_errors import UserValidateError
 from .models import User
 
 

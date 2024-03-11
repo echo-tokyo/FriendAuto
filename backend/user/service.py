@@ -1,4 +1,4 @@
-from core.errors import ServerProcessError
+from core.errors.user_errors import ServerProcessError
 from .models import Token
 
 

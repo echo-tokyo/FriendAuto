@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
 
-from core.errors import VacancyValidateError, WorksheetValidateError
+from core.errors.vacancy_errors import VacancyValidateError
+from core.errors.worksheet_errors import WorksheetValidateError
 from vacancy.models import Vacancy
 from .serializers import AddWorksheetSerializer, GetWorksheetsSerializer, MarkWorksheetViewedSerializer
 from .models import Worksheet

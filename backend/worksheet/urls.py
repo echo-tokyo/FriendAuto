@@ -4,8 +4,8 @@ from .views import AddWorksheetAPIView, GetWorksheetsAPIView, MarkWorksheetViewe
 
 
 urlpatterns = [
-    path('get-worksheets/', GetWorksheetsAPIView.as_view()),
+    path('get-worksheets/', GetWorksheetsAPIView.as_view(), name='get-worksheets'),
 
-    path('add-worksheet/', AddWorksheetAPIView.as_view()),
-    path('mark-viewed/', MarkWorksheetViewedAPIView.as_view()),
+    path('add-worksheet/', AddWorksheetAPIView.as_view(), name='add-worksheet'),
+    path('mark-viewed/', MarkWorksheetViewedAPIView.as_view(), name='mark-viewed-worksheet'),
 ]
