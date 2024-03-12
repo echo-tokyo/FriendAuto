@@ -5,9 +5,13 @@
 	margin-top: 60px;
 }
 .requests{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	height: 70px;
 	padding-left: 50px;
+	padding-right: 50px;
 	background-color: #E7E7E7;
 	border-radius: 50px;
 }
