@@ -14,12 +14,14 @@ const ServiceSignUpPage = () => {
 	const {id} = useParams()
 	const [cards, setCards] = useState([])
 	const [categoryName, setCategoryName] = useState([])
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() =>{
 		axios.get(`http://188.225.36.185/api/service/get-services?id=${id}`)
 		.then((response) => {
 			setCards(response.data.services)
 			setCategoryName(response.data.category_name)
+			setIsLoading(false)
 		})
 		.catch(error => {
 			console.error('Ошибка при получении услуг', error)
@@ -30,7 +32,11 @@ const ServiceSignUpPage = () => {
 		<>
 		<div className="content">
 			<Header categoryName={categoryName} />
-			<Services cards={cards} setCards={setCards} categoryName={categoryName} />
+			{isLoading ? (
+				<h2 style={{margin: '50px', display: 'flex', justifyContent: 'center'}}>Загрузка</h2>
+			): (
+				<Services cards={cards} setCards={setCards} categoryName={categoryName} />
+			)}
 			<Questions />
 			{isModalOpen && (
 				<ServiceSignUpModal />
