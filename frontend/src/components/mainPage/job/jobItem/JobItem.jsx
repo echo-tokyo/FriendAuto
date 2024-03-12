@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { backgroundToggle, toggleModal2, serviceName } from '../../../../store/modal/modal.slice'
+import { backgroundToggle, toggleModal2, serviceName, currentVacansyId } from '../../../../store/modal/modal.slice'
 import '../job.css'
 
 const JobItem = ({ jobItem }) => {
@@ -13,6 +13,7 @@ const JobItem = ({ jobItem }) => {
 					e.preventDefault()
 					dispatch(toggleModal2())
 					dispatch(backgroundToggle())
+					dispatch(currentVacansyId(jobItem.id))
 					dispatch(serviceName(jobItem.title))
 				}}/>
 			</div>

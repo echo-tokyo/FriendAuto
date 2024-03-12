@@ -1,24 +1,33 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { backgroundToggle, toggleModal2 } from '../../store/modal/modal.slice'
 import { useState } from 'react';
+import axios from 'axios';
 
 const MainPageModal = () => {
 
 	const dispatch = useDispatch()
+	const vacansyId = useSelector((state) => state.modal.currentVacansyId)
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
 	const [isSuccess, setIsSuccess] = useState(false)
-
+	
 	const jobRecord = (e) => {
 		e.preventDefault()
 
 		const formData = {
-			name: e.target.name.value,
-			surname: e.target.surname.value,
-			phone: e.target.phone.value
+			vacansy: vacansyId,
+			client_name: e.target.name.value,
+			client_surname: e.target.surname.value,
+			client_phone: e.target.phone.value
 		}
-		console.log(formData)
 
-		setIsSuccess(true)
+		axios.post('http://188.225.36.185/api/worksheet/add-worksheet/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		.then(() => {
+			setIsSuccess(true)
+		})
+		.catch((error) => {
+			document.querySelector('.job_btn').style.border = '2px solid red'
+			console.error('Ошибка при отправке анкеты', error)
+		})
 	}
 	
 	return (
@@ -47,7 +56,7 @@ const MainPageModal = () => {
 						<input name='surname' type="text" placeholder='Фамилия' required/>
 						<input name='phone' type="number" placeholder='Номер телефона' required/>
 					</div>
-					<input type="submit" value='Подтвердить'/>
+					<input className='job_btn' type="submit" value='Подтвердить'/>
 				</form>
 			)}
 		</div>

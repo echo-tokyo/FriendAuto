@@ -7,7 +7,8 @@ const modalSlice = createSlice({
 		isModalOpen2: false,
 		isModalOpen3: false,
 		serviceName: '',
-		currentServiceId: ''
+		currentServiceId: '',
+		currentVacansyId: '',
 	},
 	reducers: {
 		toggleModal: (state) => {
@@ -50,9 +51,12 @@ const modalSlice = createSlice({
 		},
 		currentServiceId: (state, action) => {
 			state.currentServiceId = action.payload
+		},
+		currentVacansyId: (state, action) => {
+			state.currentVacansyId = action.payload
 		}
 	}
 })
 
-export const {toggleModal, toggleModal2, toggleModal3, backgroundToggle, serviceName, currentServiceId} = modalSlice.actions
+export const {toggleModal, toggleModal2, toggleModal3, backgroundToggle, serviceName, currentServiceId, currentVacansyId} = modalSlice.actions
 export default modalSlice.reducer

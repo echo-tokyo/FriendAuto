@@ -12,7 +12,7 @@ const ServicesCard = ({card}) => {
 			<img src='../../../../../public/service.png' alt="image" />
 			<div className="card_text">
 				<h3>{card.name}</h3>
-				<h4>Записаться</h4>
+				<h4>От {card.price}</h4>
 			</div>
 		</div>
 	)
