@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 2ae2b49a18f0b373cef32df0c40b839108e573f8 sayasha <2two2two8eight@mail.ru> 1708005023 +0300	branch: Created from refs/remotes/origin/main
-2ae2b49a18f0b373cef32df0c40b839108e573f8 eb9cf43ce9729584001911a468c39d73816b3a27 sayasha <2two2two8eight@mail.ru> 1709566846 +0300	pull: Fast-forward
-eb9cf43ce9729584001911a468c39d73816b3a27 a1de2844b3e51ef04f68fa1198c0f4c10cfa854d sayasha <2two2two8eight@mail.ru> 1709567001 +0300	commit (merge): merged front
-a1de2844b3e51ef04f68fa1198c0f4c10cfa854d 5de928cf98603f831449a0422b794a5f8f783850 sayasha <2two2two8eight@mail.ru> 1709759678 +0300	pull: Fast-forward
-5de928cf98603f831449a0422b794a5f8f783850 a77369023ab2181e4ca12cdd9c68282f45e01f5f sayasha <2two2two8eight@mail.ru> 1709759771 +0300	commit (merge): merge
-a77369023ab2181e4ca12cdd9c68282f45e01f5f d5e790a87373ab90a8fec3539d2873467d5b4645 sayasha <2two2two8eight@mail.ru> 1709835407 +0300	pull: Fast-forward
-d5e790a87373ab90a8fec3539d2873467d5b4645 764f0761ba3d3bd344a6a937ccc5bba05f323b7f sayasha <2two2two8eight@mail.ru> 1709835499 +0300	commit (merge): merge
-764f0761ba3d3bd344a6a937ccc5bba05f323b7f 60e64c7a93316fe3f043d9b557456a52cbfc9af9 sayasha <2two2two8eight@mail.ru> 1709966394 +0300	pull: Fast-forward
-60e64c7a93316fe3f043d9b557456a52cbfc9af9 e7af00d02f078ead86a2c2a23ab35d7b0b67c8e7 sayasha <2two2two8eight@mail.ru> 1709966423 +0300	commit: added axios to dependecies
