@@ -16,7 +16,7 @@ const MainPage = () => {
 	const isModalOpen2 = useSelector((state) => state.modal.isModalOpen2)
 	const isModalOpen3 = useSelector((state) => state.modal.isModalOpen3)
 	const [jobItems, setJobItems] = useState([])
-
+	
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/vacancy/get-vacancies/')
 		.then((response) => {
