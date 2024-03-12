@@ -14,6 +14,7 @@
 	padding-right: 50px;
 	background-color: #E7E7E7;
 	border-radius: 50px;
+	cursor: pointer;
 }
 .requests h3{
 	display: flex;
