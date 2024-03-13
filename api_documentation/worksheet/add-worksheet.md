@@ -27,15 +27,6 @@ http://188.225.36.185/api/worksheet/add-worksheet/
 }
 ```
 
-> headers 👇
-
-```json5
-{
-    // токен юзера
-    "Authorization": "Bearer eyJhbGpXVCJ9.eyJpZCI6NSMjMyfQ.yMy6LZ0QA8JsB3LLl0"
-}
-```
-
 <hr>
 
 ### _Пример ответа сервера (JSON):_

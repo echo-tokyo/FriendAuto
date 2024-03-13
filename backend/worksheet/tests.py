@@ -3,7 +3,7 @@ from random import choice as random_choice
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, force_authenticate, APIClient
+from rest_framework.test import APITestCase, APIClient
 
 from .models import Worksheet
 from vacancy.models import Vacancy
