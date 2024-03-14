@@ -16,7 +16,7 @@ const AddVacansy = ({setVacansiesList}) => {
 		})
 		.catch((error) => {
 			document.querySelector('.vac_add_inp').style.border = '2px solid red'
-			console.error('Ошибка при отправке фото', error)
+			console.error('Ошибка при добавлении вакансии', error)
 		})
 	}
 

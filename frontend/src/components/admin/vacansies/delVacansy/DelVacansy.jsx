@@ -10,17 +10,16 @@ const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
 		if(selectedService) {
 			axios.delete('http://188.225.36.185/api/vacancy/delete-vacancy/', {data: {id: selectedService.slice(1)}, headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 			.then(() => {
-				document.querySelector('vac_del_inp').style.border = '2px solid green'
+				document.querySelector('.vac_del_inp').style.border = '2px solid green'
 				setVacansiesList(prev => prev.filter(el => el.id != selectedService.slice(1)))
 			})
 			.catch((error) => {
-				document.querySelector('vac_del_inp').style.border = '2px solid red'
-				console.log(document.querySelector('vac_del_inp'))
+				document.querySelector('.vac_del_inp').style.border = '2px solid red'
 				console.error('Ошибка при удалении услуги', error)
 			})
 		}
 		else{
-			document.querySelector('vac_del_inp').style.border = '2px solid red'
+			document.querySelector('.vac_del_inp').style.border = '2px solid red'
 		}
 	}
 
