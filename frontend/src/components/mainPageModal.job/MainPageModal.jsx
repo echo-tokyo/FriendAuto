@@ -14,13 +14,13 @@ const MainPageModal = () => {
 		e.preventDefault()
 
 		const formData = {
-			vacansy: vacansyId,
+			vacancy: vacansyId,
 			client_name: e.target.name.value,
 			client_surname: e.target.surname.value,
 			client_phone: e.target.phone.value
 		}
 
-		axios.post('http://188.225.36.185/api/worksheet/add-worksheet/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.post('http://188.225.36.185/api/worksheet/add-worksheet/', formData)
 		.then(() => {
 			setIsSuccess(true)
 		})

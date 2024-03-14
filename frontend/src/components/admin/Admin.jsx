@@ -5,8 +5,11 @@ import AdminServices from './adminServices/AdminServices'
 import Vacansies from './vacansies/Vacansies'
 import AdminFooter from './adminFooter/AdminFooter'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import BadTokenModal from './badTokenModal/BadTokenModal'
 
 const Admin = () => {
+	const [isToken, setIsToken] = useState(false)
 	return (
 		<>
 		{localStorage.getItem('token') ? (
@@ -15,7 +18,7 @@ const Admin = () => {
 					<AdminHeader />
 					<div className="lists">
 						<Requests />
-						<Worksheets />
+						<Worksheets setIsToken={setIsToken}/>
 					</div>
 				</div>
 				<AdminServices />
@@ -23,6 +26,9 @@ const Admin = () => {
 					<Vacansies />
 				</div>
 				<AdminFooter />
+				{isToken && (
+					<BadTokenModal />
+				)}
 			</>
 		) : (
 			<>

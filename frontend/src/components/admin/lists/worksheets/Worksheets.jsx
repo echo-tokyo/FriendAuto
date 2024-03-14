@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Worksheet from './worksheet/Worksheet.jsx'
 import axios from 'axios'
 
-const Worksheets = () => {
+const Worksheets = ({setIsToken}) => {
 	const [worksheets, setWorksheets] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
@@ -15,6 +15,10 @@ const Worksheets = () => {
 		})
 		.catch((error) => {
 			console.error('Ошибка при поулчении заявок', error)
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+				console.log('пидор')
+			}
 		})
 	}, [])
 

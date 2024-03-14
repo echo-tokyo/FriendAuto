@@ -15,8 +15,8 @@ const AddService = ({AddCategorizedService}) => {
 					<option value="4">Ремонт КПП</option>
 					<option value="5">Кузов и прочее</option>
 				</select>
-				<input type="text" name='name' placeholder='Название услуги'/>
-				<input type="number" name='price' placeholder='Цена, руб'/>
+				<input type="text" name='name' placeholder='Название услуги' required/>
+				<input type="number" name='price' placeholder='Цена, руб' required/>
 				<input type="submit" value="Добавить" className='addserv'/>
 			</form>
 		</div>
