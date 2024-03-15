@@ -73,9 +73,9 @@
 		align-items: center;
 	}
 	.cards{
-		justify-content: center;
 		gap: 10px;
 		margin-top: 30px;
+		justify-content: center;
 	}
 	.card img{
 		width: 80px;
