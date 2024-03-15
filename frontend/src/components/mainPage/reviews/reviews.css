@@ -37,4 +37,12 @@
 	.reviews_title{
 		padding: 50px;
 	}
+}
+@media (max-width: 700px) {
+	.reviews_title{
+		padding: 10px;
+	}
+	.reviews{
+		height: 180px;
+	}
 }	
