@@ -6,7 +6,9 @@ const MainPageModalAF = () => {
 	return (
 		<div className="modal">
 			<div className="modal_header">
-				<h2><span>П</span>артнерская программа</h2>
+				<div className="modal_title af">
+					<h2><span>П</span>артнерская программа</h2>
+				</div>
 				<svg style={{cursor: "pointer"}} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => {
 					dispatch(toggleModal3())
 					dispatch(backgroundToggle())
