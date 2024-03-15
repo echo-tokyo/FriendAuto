@@ -48,3 +48,47 @@
 	width: 160px;
 	height: 160px;
 }
+
+@media (max-width: 1000px) {
+	.card{
+		width: 200px;
+		height: 200px;
+	}
+	.card img{
+		width: 100px;
+		height: 100px;
+	}
+	.card_text{
+		padding-top: 5px;
+		gap: 0;
+	}
+	.cards{
+		gap: 20px;
+	}
+}
+@media(max-width: 520px){
+	.services_title{
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+	.cards{
+		justify-content: center;
+		gap: 10px;
+		margin-top: 30px;
+	}
+	.card img{
+		width: 80px;
+		height: 80px;
+	}
+}
+@media(max-width: 430px) {
+	.card{
+		width: 160px;
+		height: 160px;
+	}
+	.card img{
+		width: 70px;
+		height: 70px;
+	}
+}

@@ -14,6 +14,9 @@ nav{
 	letter-spacing: 0.1em;
 	color: #bcbcbc;
 	padding-top: 40px;
+	flex-wrap: wrap;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 nav h4:hover{
 	transition: 0.1s;
@@ -41,5 +44,32 @@ nav h4:hover{
 	padding-top: 20px;
 }
 .img img{
-	width: 350px;
+	height: 50vh;
 }
+@media (max-width: 480px) {
+	.img img{
+		height: 35vh;
+	}
+}
+@media (max-height: 610px) {
+	.title{
+		padding-top: 80px;
+	}
+}
+@media (max-height: 480px) {
+	.title{
+		padding-top: 40px;
+	}
+	nav{
+		padding-top: 10px;
+	}
+	.img img {
+		height: 40vh;
+	}
+}
+@media (max-height: 365px) {
+	.img img{
+		display: none;
+	}
+}
+

@@ -22,3 +22,12 @@
 	gap: 10px;
 	height: 100%;
 }
+
+@media (max-width: 1100px) {
+	.discounts{
+		text-align: center;
+	}
+	.discounts_title{
+		padding: 50px;
+	}
+}	

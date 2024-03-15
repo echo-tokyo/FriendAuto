@@ -29,3 +29,12 @@
 	color: #bcbcbc;
 	text-decoration: underline;
 }
+
+@media (max-width: 1100px) {
+	.reviews{
+		text-align: center;
+	}
+	.reviews_title{
+		padding: 50px;
+	}
+}	

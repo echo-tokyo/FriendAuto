@@ -6,7 +6,7 @@ const BadTokenModal = () => {
 		localStorage.removeItem('token')
 	}
 	return (
-		<div className="modal">
+		<div style={{backgroundColor: 'lightgrey'}} className="modal">
 			<div className="modal_header">
 				<h2><span>П</span>артнерская программа</h2>
 			</div>

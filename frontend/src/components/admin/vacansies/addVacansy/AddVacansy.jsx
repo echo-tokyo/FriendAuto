@@ -28,7 +28,7 @@ const AddVacansy = ({setVacansiesList}) => {
 			</div>
 			<form action="" className='admin_vacansy_form' onSubmit={(e) => addVacansy(e)}>
 				<input name='vacansy_name' type="text" placeholder='Название вакансии' required/>
-				<input type="file" id='fileUpload' required/>
+				<input type="file" id='fileUpload'/>
 				<label htmlFor='fileUpload' className='fileUpload'>Добавить картинку</label>
 				<input className='vac_add_inp' type="submit" value="Добавить"/>
 			</form>
