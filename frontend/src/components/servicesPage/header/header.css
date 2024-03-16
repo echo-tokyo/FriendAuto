@@ -21,4 +21,17 @@ header nav h4:hover{
 }
 .nav2{
 	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.nav2 svg{
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+@media (max-width: 1000px) {
+	.nav2 svg{
+		height: 20px;
+	}
 }

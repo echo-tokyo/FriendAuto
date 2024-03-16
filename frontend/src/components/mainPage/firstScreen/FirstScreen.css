@@ -44,9 +44,10 @@ nav h4:hover{
 	padding-top: 20px;
 }
 .img img{
-	height: 50vh;
+	/* height: 50vh; */
+	height: 300px;
 }
-@media (max-width: 480px) {
+@media (max-width: 650px) {
 	.img img{
 		height: 35vh;
 	}
@@ -56,7 +57,7 @@ nav h4:hover{
 		padding-top: 80px;
 	}
 }
-@media (max-height: 480px) {
+@media (max-height: 650px) {
 	.title{
 		padding-top: 40px;
 	}
