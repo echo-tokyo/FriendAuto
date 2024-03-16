@@ -7,14 +7,20 @@ const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
 	const selectedService = useSelector((state) => state.admin.selectedService)
 	
 	const delVacansy = () => {
-		axios.delete('http://188.225.36.185/api/vacancy/delete-vacancy/', {data: {id: selectedService.slice(1)}, headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
-		.then(() => {
-			setVacansiesList(prev => prev.filter(el => el.id != selectedService.slice(1)))
-		})
-		.catch((error) => {
-			//TODO: сделать стили при ошибки
-			console.error('Ошибка при удалении услуги', error)
-		})
+		if(selectedService) {
+			axios.delete('http://188.225.36.185/api/vacancy/delete-vacancy/', {data: {id: selectedService.slice(1)}, headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+			.then(() => {
+				document.querySelector('.vac_del_inp').style.border = '2px solid green'
+				setVacansiesList(prev => prev.filter(el => el.id != selectedService.slice(1)))
+			})
+			.catch((error) => {
+				document.querySelector('.vac_del_inp').style.border = '2px solid red'
+				console.error('Ошибка при удалении услуги', error)
+			})
+		}
+		else{
+			document.querySelector('.vac_del_inp').style.border = '2px solid red'
+		}
 	}
 
 	return (
@@ -38,7 +44,7 @@ const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
 					)}
 				</div>
 			</div>
-			<input type="submit" value='Удалить' onClick={() => delVacansy()}/>
+			<input className='vac_del_inp' type="submit" value='Удалить' onClick={() => delVacansy()}/>
 		</div>
 	)
 }

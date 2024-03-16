@@ -123,3 +123,61 @@ h4{
 	font-size: 16px;
 	font-weight: 300;
 }
+
+@media (max-width: 1000px) {
+	.content{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	h1{
+		font-size: 70px;
+		font-weight: 800;
+	}
+	h2{
+		font-size: 36px;
+		font-weight: 800;
+	}
+	p{
+		font-size: 26px;
+		font-weight: 500;
+	}
+	h3{
+		font-size: 18px;
+		font-weight: 350;
+	}
+	h4{
+		font-size: 14px;
+		font-weight: 300;
+	}
+	input[type="submit"]{
+		font-size: 18px;
+		width: 150px;
+	}
+}
+@media(max-width: 500px) {
+	h1{
+		font-size: 50px;
+	}
+	.content{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 430px) {
+	p{
+		font-size: 22px;
+		font-weight: 500;
+	}
+	h3{
+		font-size: 14px;
+		font-weight: 350;
+	}
+	h4{
+		font-size: 12px;
+		font-weight: 300;
+	}
+	input[type="submit"]{
+		font-size: 14px;
+		width: 120px;
+	}
+}

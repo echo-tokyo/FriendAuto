@@ -22,7 +22,36 @@ footer{
 	align-items: center;
 	gap: 20px;
 }
+.footer_map h3{
+	text-align: center;
+}
 .footer_map img{
 	width: 400px;
 	border-radius: 50px;
+}
+
+@media(max-width: 1000px) {
+	footer{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	.footer_map img{
+		width: 300px;
+	}
+}
+@media(max-width: 520px){
+	footer{
+		flex-direction: column;
+		justify-content: center;
+		gap: 50px;
+	}
+	.footer_contacts, .footer_map{
+		gap: 10px;
+	}
+}
+@media(max-width: 500px) {
+	footer{
+		padding-left: 10px;
+		padding-right: 20px;
+	}
 }

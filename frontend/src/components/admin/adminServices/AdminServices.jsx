@@ -26,7 +26,7 @@ const AdminServices = () => {
 		}
 		axios.post('http://188.225.36.185/api/service/add-service/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			document.querySelector('.addserv').style.border = 'none'
+			document.querySelector('.addserv').style.border = '2px solid green'
 			setCategorizedServices((prevCategorizedServices) => {
 				return prevCategorizedServices.map((category) => {
 					if (category.category_id == formData.category) {
@@ -41,7 +41,7 @@ const AdminServices = () => {
 		})
 		.catch((error) => {
 			console.error('Ошибка при добавлении', error)
-			document.querySelector('.addserv').style.border = '3px solid red'
+			document.querySelector('.addserv').style.border = '2px solid red'
 		})
 	}
 
