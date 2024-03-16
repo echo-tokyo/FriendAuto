@@ -13,7 +13,7 @@
 }
 .signup_services .card_text{
 	padding-top: 30px;
-	gap: 12px;
+	gap: 5px;
 }
 .signup_services .card h3{
 	font-size: 20px;
@@ -24,4 +24,48 @@
 }
 .signup_services .card img{
 	width: 120px;
+}
+
+@media (max-width: 1000px) {
+	.signup_services .card{
+		width: 200px;
+		height: 200px;
+	}
+	.signup_services .card img{
+		width: 100px;
+		height: 100px;
+	}
+	.signup_services .card_text{
+		padding-top: 5px;
+		gap: 0;
+	}
+	.signup_services .cards{
+		gap: 20px;
+	}
+}
+@media(max-width: 520px){
+	.signup_services .services_title{
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+	.signup_services .cards{
+		gap: 10px;
+		margin-top: 30px;
+		justify-content: center;
+	}
+	.signup_services .card img{
+		width: 80px;
+		height: 80px;
+	}
+}
+@media(max-width: 430px) {
+	.signup_services .card{
+		width: 160px;
+		height: 160px;
+	}
+	.signup_services .card img{
+		width: 70px;
+		height: 70px;
+	}
 }

@@ -18,3 +18,13 @@
 	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
+
+@media (max-width: 1280px) {
+	.questions{
+		flex-direction: column;
+		padding: 0;
+		justify-content: center;
+		gap: 20px;
+		text-align: center;
+	}
+}
