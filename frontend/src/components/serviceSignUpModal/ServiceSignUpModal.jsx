@@ -10,7 +10,18 @@ const ServiceSignUpModal = () => {
 	const serviceId = useSelector((state) => state.modal.currentServiceId)
 	const [isSuccess, setIsSuccess] = useState(false)
 
-	const addServiceRecord = (e) => {
+	const isValidateNumber = (e) => {
+		e.preventDefault()
+		// eslint-disable-next-line no-useless-escape
+		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(e.target.phone.value)) {
+			addServiceRecord(e)
+		}
+		else{
+			document.querySelector('.subm').style.border = '2px solid red'
+		}
+	}
+	
+	function addServiceRecord(e) {
 		e.preventDefault()
 		const formData = {
 			service: serviceId,
@@ -19,13 +30,13 @@ const ServiceSignUpModal = () => {
 			client_phone: e.target.phone.value,
 		}
 		axios.post('http://188.225.36.185/api/service-record/add-service-record/', formData)
-		.then(() => {
-			setIsSuccess(true)
-		})
-		.catch((error) => {
-			console.error('Ошибка при отправке формы', error)
-			document.querySelector('.subm').style.border = '2px solid red'
-		})
+			.then(() => {
+				setIsSuccess(true)
+			})
+			.catch((error) => {
+				console.error('Ошибка при отправке формы', error)
+				document.querySelector('.subm').style.border = '2px solid red'
+			})
 	}
 	
 	return (
@@ -45,7 +56,8 @@ const ServiceSignUpModal = () => {
 					<h3>Мы вам перезвоним</h3>
 				</div>
 			): (
-			<form action="" className='modal_form' onSubmit={(e) => addServiceRecord(e)}>
+			// <form action="" className='modal_form' onSubmit={(e) => addServiceRecord(e)}>
+			<form action="" className='modal_form' onSubmit={(e) => isValidateNumber(e)}>
 				<div className="inputs">
 					<input type="number" placeholder='Номер телефона' name='phone' required/>
 					<input type="text" placeholder='Марка машины' name='car_brand' required/>

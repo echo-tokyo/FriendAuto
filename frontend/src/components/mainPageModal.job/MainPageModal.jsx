@@ -9,6 +9,17 @@ const MainPageModal = () => {
 	const vacansyId = useSelector((state) => state.modal.currentVacansyId)
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
 	const [isSuccess, setIsSuccess] = useState(false)
+
+	const isValidateNumber = (e) => {
+		e.preventDefault()
+		// eslint-disable-next-line no-useless-escape
+		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(e.target.phone.value)) {
+			jobRecord(e)
+		}
+		else{
+			document.querySelector('.subm').style.border = '2px solid red'
+		}
+	}
 	
 	const jobRecord = (e) => {
 		e.preventDefault()
@@ -50,7 +61,7 @@ const MainPageModal = () => {
 				<h3>Мы вам перезвоним</h3>
 			</div>
 			): (
-				<form action="" className='modal_form' onSubmit={(e) => jobRecord(e)}>
+				<form action="" className='modal_form' onSubmit={(e) => isValidateNumber(e)}>
 					<div className="inputs">
 						<input name='name' type="text" placeholder='Имя' required/>
 						<input name='surname' type="text" placeholder='Фамилия' required/>
