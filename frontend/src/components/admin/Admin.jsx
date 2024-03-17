@@ -17,13 +17,13 @@ const Admin = () => {
 				<div className="content">
 					<AdminHeader />
 					<div className="lists">
-						<Requests />
+						<Requests setIsToken={setIsToken}/>
 						<Worksheets setIsToken={setIsToken}/>
 					</div>
 				</div>
-				<AdminServices />
+				<AdminServices setIsToken={setIsToken}/>
 				<div className="content">
-					<Vacansies />
+					<Vacansies setIsToken={setIsToken}/>
 				</div>
 				<AdminFooter />
 				{isToken && (

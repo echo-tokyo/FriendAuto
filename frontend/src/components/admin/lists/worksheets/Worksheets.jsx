@@ -17,7 +17,6 @@ const Worksheets = ({setIsToken}) => {
 			console.error('Ошибка при поулчении заявок', error)
 			if(error.response.data.errors.invalid_token){
 				setIsToken(true)
-				console.log('пидор')
 			}
 		})
 	}, [])

@@ -3,7 +3,7 @@ import '../requests.css'
 import Request from './request/Request'
 import axios from 'axios'
 
-const Requests = () => {
+const Requests = ({setIsToken}) => {
 	const [requests, setRequests] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
@@ -15,6 +15,9 @@ const Requests = () => {
 			setIsLoading(false)
 		})
 		.catch((error) => {
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 			console.error('Ошибка при поулчении заявок', error)
 		})
 	}, [])

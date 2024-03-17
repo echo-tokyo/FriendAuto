@@ -24,8 +24,8 @@ const Worksheet = ({worksheet, setWorksheets}) => {
 					<h3><span>Фамилия:</span> {worksheet.client_surname}</h3>
 					<h3><span>Номер телефона:</span> {worksheet.client_phone}</h3>
 				</div>
-				<div className="border"></div>
 			</div>
+				<div className="border"></div>
 		</div>
 	)	
 }

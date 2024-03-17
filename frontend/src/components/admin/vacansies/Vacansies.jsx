@@ -3,7 +3,7 @@ import AddVacansy from './addVacansy/AddVacansy'
 import DelVacansy from './delVacansy/DelVacansy'
 import axios from 'axios'
 
-const Vacansies = () => {
+const Vacansies = ({setIsToken}) => {
 	const [vacansiesList, setVacansiesList] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 
@@ -14,6 +14,9 @@ const Vacansies = () => {
 			setIsLoading(false)
 		})
 		.catch((error) => {
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 			console.error('Ошибпри при получении вакансий', error)
 		})
 	}, [])

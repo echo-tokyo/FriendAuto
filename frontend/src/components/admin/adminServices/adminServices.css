@@ -3,8 +3,18 @@
 	background-color: #E9E9E9;
 	margin-top: 60px;
 	margin-bottom: 60px;
-	padding-left: 160px;
-	padding-right: 160px;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding: 60px 160px 60px 160px;
+}
+
+@media (max-width: 1000px) {
+	.adminServices_content{
+		padding-right: 50px;
+		padding-left: 50px;
+	}
+}
+@media (max-width: 500px) {
+	.adminServices_content{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
 }

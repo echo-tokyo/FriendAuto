@@ -4,7 +4,7 @@ import DeleteService from './deleteService/DeleteService'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const AdminServices = () => {
+const AdminServices = ({setIsToken}) => {
 	const [categorizedServices, setCategorizedServices] = useState([])
 
 	useEffect(() => {
@@ -13,6 +13,9 @@ const AdminServices = () => {
 			setCategorizedServices(response.data)
 		})
 		.catch(error => {
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 			console.error('Ошибка при получении услуг', error)
 		})
 	}, [])
@@ -36,8 +39,8 @@ const AdminServices = () => {
 						}
 					}
 					return category;
-				});
-			});
+				})
+			})
 		})
 		.catch((error) => {
 			console.error('Ошибка при добавлении', error)
