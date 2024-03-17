@@ -14,7 +14,7 @@ const Admin = () => {
 		<>
 		{localStorage.getItem('token') ? (
 			<>
-				<div className="content">
+				<div className="admin_content">
 					<AdminHeader />
 					<div className="lists">
 						<Requests setIsToken={setIsToken}/>

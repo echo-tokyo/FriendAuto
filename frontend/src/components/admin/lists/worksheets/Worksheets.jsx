@@ -10,7 +10,7 @@ const Worksheets = ({setIsToken}) => {
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/worksheet/get-worksheets/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			setWorksheets(response.data)
+			setWorksheets(response.data.reverse())
 			setIsLoading(false)
 		})
 		.catch((error) => {

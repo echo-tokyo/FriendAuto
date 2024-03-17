@@ -11,7 +11,7 @@ const Requests = ({setIsToken}) => {
 	useEffect(() => {
 		axios.get('http://188.225.36.185/api/service-record/get-service-records/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
-			setRequests(response.data)
+			setRequests(response.data.reverse())
 			setIsLoading(false)
 		})
 		.catch((error) => {

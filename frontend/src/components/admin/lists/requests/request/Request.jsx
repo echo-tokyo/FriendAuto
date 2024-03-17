@@ -24,8 +24,8 @@ const Request = ({request, setRequests}) => {
 					<h3><span>Номер машины:</span> {request.car_number}</h3>
 					<h3><span>Номер телефона:</span> {request.client_phone}</h3>
 				</div>
-				<div className="border"></div>
 			</div>
+			<div className="border"></div>
 		</div>
 	)	
 }
