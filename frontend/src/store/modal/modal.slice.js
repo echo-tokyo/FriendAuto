@@ -54,7 +54,7 @@ const modalSlice = createSlice({
 		},
 		currentVacansyId: (state, action) => {
 			state.currentVacansyId = action.payload
-		}
+		},
 	}
 })
 

@@ -56,7 +56,6 @@ const ServiceSignUpModal = () => {
 					<h3>Мы вам перезвоним</h3>
 				</div>
 			): (
-			// <form action="" className='modal_form' onSubmit={(e) => addServiceRecord(e)}>
 			<form action="" className='modal_form' onSubmit={(e) => isValidateNumber(e)}>
 				<div className="inputs">
 					<input type="number" placeholder='Номер телефона' name='phone' required/>

@@ -9,7 +9,7 @@ const MainPageModal = () => {
 	const vacansyId = useSelector((state) => state.modal.currentVacansyId)
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
 	const [isSuccess, setIsSuccess] = useState(false)
-
+	
 	const isValidateNumber = (e) => {
 		e.preventDefault()
 		// eslint-disable-next-line no-useless-escape
