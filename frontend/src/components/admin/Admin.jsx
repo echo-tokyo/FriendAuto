@@ -10,6 +10,7 @@ import BadTokenModal from './badTokenModal/BadTokenModal'
 
 const Admin = () => {
 	const [isToken, setIsToken] = useState(false)
+
 	return (
 		<>
 		{localStorage.getItem('token') ? (
