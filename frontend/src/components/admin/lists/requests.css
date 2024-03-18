@@ -14,7 +14,6 @@
 	padding-right: 50px;
 	background-color: #E7E7E7;
 	border-radius: 50px;
-	cursor: pointer;
 }
 .requests h3{
 	display: flex;
@@ -64,6 +63,14 @@
 	width: 100%;
 	border-radius: 50px;
 	border: 1px solid black;
+}
+.svgs{
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.svgs svg{
+	cursor: pointer;
 }
 
 @media (max-width: 650px) {

@@ -17,7 +17,7 @@ const Vacansies = ({setIsToken}) => {
 			if(error.response.data.errors.invalid_token){
 				setIsToken(true)
 			}
-			console.error('Ошибпри при получении вакансий', error)
+			console.error('Ошибка при при получении вакансий', error)
 		})
 	}, [])
 
