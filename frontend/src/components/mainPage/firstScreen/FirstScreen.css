@@ -68,7 +68,7 @@ nav h4:hover{
 		height: 40vh;
 	}
 }
-@media (max-height: 365px) {
+@media (max-height: 430px) {
 	.img img{
 		display: none;
 	}

@@ -11,6 +11,7 @@ const Header = () => {
 				<a onClick={() => nav('/')}><h4>ПРЕИМУЩЕСТВА</h4></a>
 				<a onClick={() => nav('/')}><h4>СКИДКИ</h4></a>
 				<a onClick={() => nav('/')}><h4>ТРУДОУСТРОЙСТВО</h4></a>
+				{localStorage.getItem('token') && <Link to='/admin/panel'><h4>АДМИН</h4></Link>}
 			</nav>
 			<div className="nav2">
 				<Link to='/'>

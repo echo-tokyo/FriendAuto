@@ -2,11 +2,18 @@ import axios from 'axios'
 import './adminLogin.css'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 const AdminLogin = () => {
 	
 	const nav = useNavigate()
 	const ip = useSelector((state) => state.ip.ipAddress)
+
+	useEffect(() => {
+		if(localStorage.getItem('token')){
+			nav('/admin/panel')
+		}
+	}, [])
 
 	const login = (e) => {
 		e.preventDefault()

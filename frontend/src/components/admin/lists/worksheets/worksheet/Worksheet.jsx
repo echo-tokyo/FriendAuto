@@ -21,7 +21,7 @@ const Worksheet = ({worksheet, setWorksheets, setIsToken}) => {
 			<div className="request_header">
 				<h4>{worksheet.sent_at}</h4>
 				<h3>{worksheet.vacancy.name}</h3>
-				<h3 onClick={() => markAsRead()}>Отметить заявку прочитанной</h3>
+				<h3 onClick={() => markAsRead()}>Отметить анкету прочитанной</h3>
 			</div>
 			<div className="request_info_wrapper">
 				<div className="request_info">
