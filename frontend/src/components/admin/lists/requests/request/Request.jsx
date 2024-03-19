@@ -16,7 +16,8 @@ const Request = ({request, setRequests}) => {
 	return (
 		<div className="request">
 			<div className="request_header">
-				<h3>{request.name}</h3>
+				<h4>{request.sent_at}</h4>
+				<h3>{request.service.name}</h3>
 				<h3 onClick={() => markAsRead()}>Отметить заявку прочитанной</h3>
 			</div>
 			<div className="request_info_wrapper">

@@ -49,6 +49,9 @@
 .request_header h3:last-child{
 	cursor: pointer;
 }
+.request_header h3:last-child:hover{
+	color: red;
+}
 .request_info{
 	display: flex;
 	gap: 30px;

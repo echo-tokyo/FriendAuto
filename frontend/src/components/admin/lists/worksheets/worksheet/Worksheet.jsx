@@ -16,7 +16,8 @@ const Worksheet = ({worksheet, setWorksheets}) => {
 	return (
 		<div className="request">
 			<div className="request_header">
-				<h3>{worksheet.worksheet}</h3>
+				<h4>{worksheet.sent_at}</h4>
+				<h3>{worksheet.vacancy.name}</h3>
 				<h3 onClick={() => markAsRead()}>Отметить заявку прочитанной</h3>
 			</div>
 			<div className="request_info_wrapper">
