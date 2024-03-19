@@ -15,6 +15,8 @@ footer{
 }
 .phone{
 	color: #B3B3B3;
+	cursor: text;
+	user-select: text;
 }
 .footer_map{
 	display: flex;

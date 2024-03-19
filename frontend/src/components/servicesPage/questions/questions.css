@@ -12,6 +12,10 @@
 	border: 1px solid;
 	transition: 0.5s ease;
 }
+.questions h3{
+	user-select: text;
+	cursor: text;
+}
 .questions:hover{
 	transform: scale(1.025);
 	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
