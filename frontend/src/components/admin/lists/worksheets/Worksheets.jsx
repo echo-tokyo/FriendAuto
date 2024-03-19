@@ -11,6 +11,7 @@ const Worksheets = ({setIsToken}) => {
 	const ip = useSelector((state) => state.ip.ipAddress)
 
 	const getWorksheets = () => {
+		setIsLoading(true)
 		axios.get(`${ip}/api/worksheet/get-worksheets/`, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			setWorksheets(response.data.reverse())

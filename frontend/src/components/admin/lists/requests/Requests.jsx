@@ -12,6 +12,7 @@ const Requests = ({setIsToken}) => {
 	const ip = useSelector((state) => state.ip.ipAddress)
 
 	const getRequests = () => {
+		setIsLoading(true)
 		axios.get(`${ip}/api/service-record/get-service-records/`, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			setRequests(response.data.reverse());

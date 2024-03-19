@@ -18,7 +18,8 @@ const MainPageModal = () => {
 			jobRecord(e)
 		}
 		else{
-			document.querySelector('.subm').style.border = '2px solid red'
+			document.querySelector('.job_btn').style.border = '2px solid red'
+			console.log('Неправильный номер телефона')
 		}
 	}
 	
