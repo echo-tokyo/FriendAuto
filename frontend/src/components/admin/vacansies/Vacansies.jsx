@@ -26,8 +26,8 @@ const Vacansies = ({setIsToken}) => {
 
 	return (
 		<>
-		<AddVacansy setVacansiesList={setVacansiesList} />
-		<DelVacansy setVacansiesList={setVacansiesList} vacansiesList={vacansiesList} isLoading={isLoading} />
+		<AddVacansy setVacansiesList={setVacansiesList} setIsToken={setIsToken}/>
+		<DelVacansy setVacansiesList={setVacansiesList} vacansiesList={vacansiesList} isLoading={isLoading} setIsToken={setIsToken}/>
 		</>
 	)
 }

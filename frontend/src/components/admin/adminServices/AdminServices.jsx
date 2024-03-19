@@ -48,6 +48,9 @@ const AdminServices = ({setIsToken}) => {
 		.catch((error) => {
 			console.error('Ошибка при добавлении', error)
 			document.querySelector('.addserv').style.border = '2px solid red'
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 		})
 	}
 
@@ -55,7 +58,7 @@ const AdminServices = ({setIsToken}) => {
 		<>
 		<div className="adminServices_content">
 			<AddService AddCategorizedService={AddCategorizedService}/>
-			<DeleteService categorizedServices={categorizedServices} setCategorizedServices={setCategorizedServices}/>
+			<DeleteService categorizedServices={categorizedServices} setCategorizedServices={setCategorizedServices} setIsToken={setIsToken}/>
 		</div>
 		</>
 	)

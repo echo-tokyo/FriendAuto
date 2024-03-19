@@ -56,7 +56,7 @@ const Requests = ({setIsToken}) => {
 				) : (
 					<>
 					{requests.length > 0 ? (
-						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request} />)
+						requests.map(request => <Request key={request.id} setRequests={setRequests} request={request} setIsToken={setIsToken}/>)
 					): (
 						<h3 style={{display: 'flex', justifyContent: 'center'}}>Записей нет</h3>
 					)}

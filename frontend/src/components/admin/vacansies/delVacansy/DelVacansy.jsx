@@ -3,7 +3,7 @@ import VacansiesList from './vacansiesList/VacansiesList'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
-const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
+const DelVacansy = ({setVacansiesList, isLoading, vacansiesList, setIsToken}) => {
 
 	const selectedService = useSelector((state) => state.admin.selectedService)
 	const ip = useSelector((state) => state.ip.ipAddress)
@@ -18,6 +18,9 @@ const DelVacansy = ({setVacansiesList, isLoading, vacansiesList}) => {
 			.catch((error) => {
 				document.querySelector('.vac_del_inp').style.border = '2px solid red'
 				console.error('Ошибка при удалении услуги', error)
+				if(error.response.data.errors.invalid_token){
+					setIsToken(true)
+				}
 			})
 		}
 		else{

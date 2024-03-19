@@ -2,7 +2,7 @@ import axios from 'axios';
 import './addVacansy.css'
 import { useSelector } from 'react-redux';
 
-const AddVacansy = ({setVacansiesList}) => {
+const AddVacansy = ({setVacansiesList, setIsToken}) => {
 
 	const ip = useSelector((state) => state.ip.ipAddress)
 	
@@ -20,6 +20,9 @@ const AddVacansy = ({setVacansiesList}) => {
 		.catch((error) => {
 			document.querySelector('.vac_add_inp').style.border = '2px solid red'
 			console.error('Ошибка при добавлении вакансии', error)
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 		})
 	}
 

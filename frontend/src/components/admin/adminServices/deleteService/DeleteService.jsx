@@ -3,7 +3,7 @@ import './deleteService.css'
 import ServiceList from './ServiceList/ServiceList'
 import axios from 'axios'
 
-const DeleteService = ({categorizedServices, setCategorizedServices}) => {
+const DeleteService = ({categorizedServices, setCategorizedServices, setIsToken}) => {
 
 	const selectedService = useSelector((state) => state.admin.selectedService)
 	const ip = useSelector((state) => state.ip.ipAddress)
@@ -28,6 +28,9 @@ const DeleteService = ({categorizedServices, setCategorizedServices}) => {
 			.catch((error) => {
 				console.error('Ошибка при удалении услуги', error)
 				document.querySelector('.del_btn').style.border = '2px solid red'
+				if(error.response.data.errors.invalid_token){
+					setIsToken(true)
+				}
 			})
 		} 
 		else{

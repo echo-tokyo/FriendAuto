@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
-const Worksheet = ({worksheet, setWorksheets}) => {
+const Worksheet = ({worksheet, setWorksheets, setIsToken}) => {
 
 	const ip = useSelector((state) => state.ip.ipAddress)
 
@@ -10,6 +10,9 @@ const Worksheet = ({worksheet, setWorksheets}) => {
 		axios.post(`${ip}/api/worksheet/mark-viewed/`, {id: worksheet.id}, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.catch((error) => {
 			console.error('Ошибка при пометке', error)
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 		})
 	}
 

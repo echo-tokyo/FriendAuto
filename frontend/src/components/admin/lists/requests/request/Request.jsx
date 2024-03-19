@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
-const Request = ({request, setRequests}) => {
+const Request = ({request, setRequests, setIsToken}) => {
 
 	const ip = useSelector((state) => state.ip.ipAddress)
 	
@@ -10,6 +10,9 @@ const Request = ({request, setRequests}) => {
 		axios.post(`${ip}/api/service-record/mark-viewed/`, {id: request.id}, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.catch((error) => {
 			console.error('Ошибка при пометке', error)
+			if(error.response.data.errors.invalid_token){
+				setIsToken(true)
+			}
 		})
 	}
 
