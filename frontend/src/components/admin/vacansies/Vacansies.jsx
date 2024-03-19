@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react'
 import AddVacansy from './addVacansy/AddVacansy'
 import DelVacansy from './delVacansy/DelVacansy'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Vacansies = ({setIsToken}) => {
+	
 	const [vacansiesList, setVacansiesList] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
+	const ip = useSelector((state) => state.ip.ipAddress)
 
 	useEffect(() => {
-		axios.get('http://188.225.36.185/api/vacancy/get-vacancies/')
+		axios.get(`${ip}/api/vacancy/get-vacancies/`)
 		.then((response) => {
 			setVacansiesList(response.data)
 			setIsLoading(false)

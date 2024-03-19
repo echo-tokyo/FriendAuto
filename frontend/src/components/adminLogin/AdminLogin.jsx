@@ -1,16 +1,20 @@
 import axios from 'axios'
 import './adminLogin.css'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const AdminLogin = () => {
+	
 	const nav = useNavigate()
+	const ip = useSelector((state) => state.ip.ipAddress)
+
 	const login = (e) => {
 		e.preventDefault()
 		const userData = {
 			username: e.target.login.value,
 			password: e.target.password.value
 		}
-		axios.post('http://188.225.36.185/api/user/login/', userData)
+		axios.post(`${ip}/api/user/login/`, userData)
 		.then(response => {
 			localStorage.setItem('token', response.data.token)
 			nav('/admin/panel')
@@ -20,6 +24,7 @@ const AdminLogin = () => {
 			document.querySelector('.admin_login').style.border = '1px solid red'
 		})
 	}
+	
 	return (
 		<>
 		<div className="admin_background"></div>

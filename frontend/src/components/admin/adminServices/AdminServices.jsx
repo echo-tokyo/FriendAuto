@@ -3,12 +3,15 @@ import AddService from './addService/AddService'
 import DeleteService from './deleteService/DeleteService'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const AdminServices = ({setIsToken}) => {
+	
 	const [categorizedServices, setCategorizedServices] = useState([])
+	const ip = useSelector((state) => state.ip.ipAddress)
 
 	useEffect(() => {
-		axios.get('http://188.225.36.185/api/service/get-all-categorized-services/')
+		axios.get(`${ip}/api/service/get-all-categorized-services/`)
 		.then(response => {
 			setCategorizedServices(response.data)
 		})
@@ -27,7 +30,7 @@ const AdminServices = ({setIsToken}) => {
 			category: e.target.category.value,
 			price: e.target.price.value
 		}
-		axios.post('http://188.225.36.185/api/service/add-service/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.post(`${ip}/api/service/add-service/`, formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			document.querySelector('.addserv').style.border = '2px solid green'
 			setCategorizedServices((prevCategorizedServices) => {

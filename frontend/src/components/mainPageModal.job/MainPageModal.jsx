@@ -8,6 +8,7 @@ const MainPageModal = () => {
 	const dispatch = useDispatch()
 	const vacansyId = useSelector((state) => state.modal.currentVacansyId)
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
+	const ip = useSelector((state) => state.ip.ipAddress)
 	const [isSuccess, setIsSuccess] = useState(false)
 	
 	const isValidateNumber = (e) => {
@@ -31,7 +32,7 @@ const MainPageModal = () => {
 			client_phone: e.target.phone.value
 		}
 
-		axios.post('http://188.225.36.185/api/worksheet/add-worksheet/', formData)
+		axios.post(`${ip}/api/worksheet/add-worksheet/`, formData)
 		.then(() => {
 			setIsSuccess(true)
 		})

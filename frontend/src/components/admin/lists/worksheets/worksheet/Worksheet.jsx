@@ -1,10 +1,13 @@
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Worksheet = ({worksheet, setWorksheets}) => {
 
+	const ip = useSelector((state) => state.ip.ipAddress)
+
 	const markAsRead = () => {
 		setWorksheets((prev) => prev.filter((item) => item.id !== worksheet.id))
-		axios.post('http://188.225.36.185/api/worksheet/mark-viewed/', {id: worksheet.id}, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.post(`${ip}/api/worksheet/mark-viewed/`, {id: worksheet.id}, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.catch((error) => {
 			console.error('Ошибка при пометке', error)
 		})

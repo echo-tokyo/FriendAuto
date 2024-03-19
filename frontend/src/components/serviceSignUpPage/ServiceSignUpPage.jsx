@@ -11,13 +11,14 @@ import { useParams } from 'react-router-dom'
 const ServiceSignUpPage = () => {
 
 	const isModalOpen = useSelector((state) => state.modal.isModalOpen)
+	const ip = useSelector((state) => state.ip.ipAddress)
 	const {id} = useParams()
 	const [cards, setCards] = useState([])
 	const [categoryName, setCategoryName] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() =>{
-		axios.get(`http://188.225.36.185/api/service/get-services?id=${id}`)
+		axios.get(`${ip}/api/service/get-services?id=${id}`)
 		.then((response) => {
 			setCards(response.data.services)
 			setCategoryName(response.data.category_name)

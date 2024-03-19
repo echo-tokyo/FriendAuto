@@ -13,17 +13,19 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const MainPage = () => {
+	
 	const isModalOpen2 = useSelector((state) => state.modal.isModalOpen2)
 	const isModalOpen3 = useSelector((state) => state.modal.isModalOpen3)
+	const ip = useSelector((state) => state.ip.ipAddress)
 	const [jobItems, setJobItems] = useState([])
 	
 	useEffect(() => {
-		axios.get('http://188.225.36.185/api/vacancy/get-vacancies/')
+		axios.get(`${ip}/api/vacancy/get-vacancies/`)
 		.then((response) => {
 			setJobItems(response.data)
 		})
 		.catch((error) => {
-			console.error('Ошибпри при получении вакансий', error)
+			console.error('Ошибка при получении вакансий', error)
 		})
 	}, [])
 

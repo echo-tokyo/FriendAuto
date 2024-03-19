@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import Worksheet from './worksheet/Worksheet.jsx'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Worksheets = ({setIsToken}) => {
+	
 	const [worksheets, setWorksheets] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
+	const ip = useSelector((state) => state.ip.ipAddress)
 
 	const getWorksheets = () => {
-		axios.get('http://188.225.36.185/api/worksheet/get-worksheets/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.get(`${ip}/api/worksheet/get-worksheets/`, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			setWorksheets(response.data.reverse())
 			setIsLoading(false)

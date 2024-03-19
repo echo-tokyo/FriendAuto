@@ -1,11 +1,14 @@
 import axios from 'axios'
 import './adminHeader.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const AdminHeader = () => {
 	const nav = useNavigate()
+	const ip = useSelector((state) => state.ip.ipAddress)
+
 	const logout = () => {
-		axios.post('http://188.225.36.185/api/user/logout/', null, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.post(`${ip}/api/user/logout/`, null, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.catch((error) => {
 			console.error('Ошибка при выходе', error)
 		})

@@ -2,9 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import '../services.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const ServicesCards = () => {
+	
 	const nav = useNavigate()
+	const ip = useSelector((state) => state.ip.ipAddress)
 	const [firstService, setFirstService] = useState('')
 	const [secondService, setSecondService] = useState('')
 	const [thirdService, setThirdService] = useState('')
@@ -12,7 +15,7 @@ const ServicesCards = () => {
 	const [fifthervice, setFifthService] = useState('')
  
 	useEffect(() => {
-		axios.get('http://188.225.36.185/api/service/get-categories/')
+		axios.get(`${ip}/api/service/get-categories/`)
 		.then((response) => {
 			setFirstService(response.data[0].count_services)
 			setSecondService(response.data[1].count_services)

@@ -6,9 +6,11 @@ import axios from 'axios'
 const DeleteService = ({categorizedServices, setCategorizedServices}) => {
 
 	const selectedService = useSelector((state) => state.admin.selectedService)
+	const ip = useSelector((state) => state.ip.ipAddress)
+
 	const delService = () => {
 		if(selectedService) {
-			axios.delete('http://188.225.36.185/api/service/delete-service/', {
+			axios.delete(`${ip}/api/service/delete-service/`, {
 				data: {id: selectedService.slice(1)},
 				headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
 			})

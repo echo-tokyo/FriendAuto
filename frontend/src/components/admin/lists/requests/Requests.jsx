@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react'
 import '../requests.css'
 import Request from './request/Request'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Requests = ({setIsToken}) => {
+	
 	const [requests, setRequests] = useState([])
 	const [isListOpen, setIsListOpen] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
+	const ip = useSelector((state) => state.ip.ipAddress)
 
 	const getRequests = () => {
-		axios.get('http://188.225.36.185/api/service-record/get-service-records/', {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.get(`${ip}/api/service-record/get-service-records/`, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			setRequests(response.data.reverse());
 			setIsLoading(false)

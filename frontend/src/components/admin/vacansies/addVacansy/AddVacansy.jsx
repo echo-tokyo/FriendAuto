@@ -1,7 +1,10 @@
 import axios from 'axios';
 import './addVacansy.css'
+import { useSelector } from 'react-redux';
 
 const AddVacansy = ({setVacansiesList}) => {
+
+	const ip = useSelector((state) => state.ip.ipAddress)
 	
 	const addVacansy = (e) => {
 		e.preventDefault()
@@ -9,7 +12,7 @@ const AddVacansy = ({setVacansiesList}) => {
 		formData.append('title', e.target.vacansy_name.value);
 		formData.append('photo', e.target.fileUpload.files[0]);
 
-		axios.post('http://188.225.36.185/api/vacancy/add-vacancy/', formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+		axios.post(`${ip}/api/vacancy/add-vacancy/`, formData, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.then((response) => {
 			document.querySelector('.vac_add_inp').style.border = '2px solid green'
 			setVacansiesList((prev) => [...prev, response.data])

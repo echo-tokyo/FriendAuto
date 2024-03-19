@@ -5,9 +5,11 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const ServiceSignUpModal = () => {
+	
 	const dispatch = useDispatch()
 	const selectedServiceName = useSelector((state) => state.modal.serviceName);
 	const serviceId = useSelector((state) => state.modal.currentServiceId)
+	const ip = useSelector((state) => state.ip.ipAddress)
 	const [isSuccess, setIsSuccess] = useState(false)
 
 	const isValidateNumber = (e) => {
@@ -29,7 +31,7 @@ const ServiceSignUpModal = () => {
 			car_number: e.target.car_number.value,
 			client_phone: e.target.phone.value,
 		}
-		axios.post('http://188.225.36.185/api/service-record/add-service-record/', formData)
+		axios.post(`${ip}/api/service-record/add-service-record/`, formData)
 			.then(() => {
 				setIsSuccess(true)
 			})
