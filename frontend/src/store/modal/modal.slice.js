@@ -35,7 +35,7 @@ const modalSlice = createSlice({
 		backgroundToggle: (state) => {
 			if (state.isModalOpen2 === true || state.isModalOpen3 === true) { 
 				document.body.style.backgroundColor = '#D7D7D7' 
-				document.body.style.overflow = 'hidden' 
+				document.body.style.overflow = 'hidden'
 				document.querySelectorAll('.job_items').forEach((e) => e.style.backgroundColor = '#CCCCCC')
 				document.querySelector('.affiliateProgram').style.backgroundColor = '#CCCCCC'
 			}

@@ -11,6 +11,10 @@ import BadTokenModal from './badTokenModal/BadTokenModal'
 const Admin = () => {
 	const [isToken, setIsToken] = useState(false)
 
+	if (isToken) {
+		document.body.style.overflow = 'hidden'
+	}
+	
 	return (
 		<>
 		{localStorage.getItem('token') ? (

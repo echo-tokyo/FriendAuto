@@ -5,7 +5,7 @@ const BadTokenModal = () => {
 		nav('/admin')
 		localStorage.removeItem('token')
 	}
-
+	
 	return (
 		<div style={{backgroundColor: 'lightgrey'}} className="modal">
 			<div className="modal_header">
