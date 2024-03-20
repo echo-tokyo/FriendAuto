@@ -19,7 +19,7 @@ const MainPageModal = () => {
 		}
 		else{
 			document.querySelector('.job_btn').style.border = '2px solid red'
-			console.log('Неправильный номер телефона')
+			e.target.phone.style.border = '2px solid red'
 		}
 	}
 	

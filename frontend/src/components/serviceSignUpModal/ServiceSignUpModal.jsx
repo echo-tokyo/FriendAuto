@@ -21,7 +21,6 @@ const ServiceSignUpModal = () => {
 		else{
 			document.querySelector('.subm').style.border = '2px solid red'
 			e.target.phone.style.border = '2px solid red'
-			console.log('Неправильный номер телефона')
 		}
 	}
 	
