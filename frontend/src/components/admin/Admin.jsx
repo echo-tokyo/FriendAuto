@@ -14,6 +14,9 @@ const Admin = () => {
 	if (isToken) {
 		document.body.style.overflow = 'hidden'
 	}
+	else {
+		document.body.style.overflow = 'visible'
+	}
 	
 	return (
 		<>

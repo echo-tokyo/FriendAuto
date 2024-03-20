@@ -46,6 +46,7 @@ const Worksheets = ({setIsToken}) => {
 						<path d="M12 6V18M12 6L7 11M12 6L17 11" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 					</svg>
 				)}
+				<h3 style={{color: 'red'}}>{worksheets.length > 0 && worksheets.length}</h3>
 			</div>
 		</div>
 		{isListOpen && (

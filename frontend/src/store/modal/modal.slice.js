@@ -41,7 +41,7 @@ const modalSlice = createSlice({
 			}
 			else if (state.isModalOpen2 === false || state.isModalOpen3 === false) { 
 				document.body.style.backgroundColor = 'white' 
-				document.body.style.overflow = 'visible' 
+				document.body.style.overflow = 'visible'
 				document.querySelectorAll('.job_items').forEach((e) => e.style.backgroundColor = '#ECECEC')
 				document.querySelector('.affiliateProgram').style.backgroundColor = '#ECECEC'
 			}

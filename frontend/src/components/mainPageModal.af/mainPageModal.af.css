@@ -12,6 +12,9 @@
     z-index: 1000;
     border-radius: 50px;
 }
+.modal_af h3{
+	font-weight: 500;
+}
 @media(max-width: 1150px) {
 	.modal_af h2{
 		font-size: 30px;
