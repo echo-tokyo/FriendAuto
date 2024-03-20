@@ -118,14 +118,14 @@ REST_FRAMEWORK = {
     ),
 }
 # JWT_EXPIRE = timedelta(days=10)
-JWT_EXPIRE = timedelta(minutes=1)
+JWT_EXPIRE = timedelta(minutes=10)
 
 
 # development (NOT USE IN PRODUCTION)
 CORS_ALLOW_ALL_ORIGINS = True
 # Адреса с доступом к кросс-доменным запросам
 # CORS_ALLOWED_ORIGINS = [
-#    "http://frontend:5050"
+#    "http://172.16.1.9"
 # ]
 
 # Разрешение на включение в запрос куки
