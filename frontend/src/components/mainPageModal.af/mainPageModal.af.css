@@ -1,0 +1,50 @@
+.modal_af {
+    display: flex;
+	flex-direction: column;
+	padding: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 50vw;
+    height: 70vh;
+    z-index: 1000;
+    border-radius: 50px;
+}
+@media(max-width: 1150px) {
+	.modal_af h2{
+		font-size: 30px;
+	}
+	.modal_af h3{
+		font-size: 20px;
+	}
+}
+@media(max-width: 950px){
+	.modal_af {
+		width: 60vw;
+	}
+	.modal_af h3{
+		font-size: 16px;
+	}
+}
+@media (max-width: 680px) {
+    .af h2{
+        font-size: 22px;
+    }
+    .af h3{
+        font-size: 14px;
+    }
+    .modal_af{
+        padding: 10px;
+        height: 50vh;
+    }
+}
+@media (max-width: 460px){  
+    .modal_af h2{
+		font-size: 16px;
+	}
+    .modal_af h3{
+		font-size: 12px;
+	}
+}

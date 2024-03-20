@@ -55,9 +55,6 @@
 }
 
 @media (max-width: 680px) {
-    .af h2{
-        font-size: 32px;
-    }
     .modal{
         padding: 10px;
         height: 70vh;
@@ -71,9 +68,6 @@
         height: 67vh;
         width: 80vw;
     }
-    .af h2{
-        font-size: 28px;
-    }
     .modal_header svg{
         width: 40px;
     } 
@@ -83,10 +77,5 @@
     }
     .modal_form input, .modal input[type="submit"]{
         width: 60vw;
-    }
-}
-@media (max-width: 390px){  
-    .af h2{
-        font-size: 18px;
     }
 }

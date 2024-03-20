@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux'
 import { backgroundToggle, toggleModal3 } from '../../store/modal/modal.slice'
+import './mainPageModal.af.css'
 
 const MainPageModalAF = () => {
 	const dispatch = useDispatch()
 	return (
-		<div className="modal">
+		<div className="modal_af">
 			<div className="modal_header">
 				<div className="modal_title af">
 					<h2><span>П</span>артнерская программа</h2>
