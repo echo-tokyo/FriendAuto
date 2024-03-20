@@ -118,7 +118,7 @@ REST_FRAMEWORK = {
     ),
 }
 # JWT_EXPIRE = timedelta(days=10)
-JWT_EXPIRE = timedelta(minutes=10)
+JWT_EXPIRE = timedelta(minutes=1)
 
 
 # development (NOT USE IN PRODUCTION)
