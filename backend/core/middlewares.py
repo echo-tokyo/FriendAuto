@@ -20,8 +20,8 @@ class CheckTokenMiddleware:
             return response
         else:
             return JsonResponse(
-                data={'errors': {'invalid_token': 'Invalid token. Token does not exist. Re-authorisation required'}},
-                status=status.HTTP_401_UNAUTHORIZED
+                data={'errors': {'user_access_forbidden': 'Invalid token. Token does not exist. Re-authorisation required'}},
+                status=status.HTTP_403_FORBIDDEN
             )
 
     def check_token(self, request: Request):
