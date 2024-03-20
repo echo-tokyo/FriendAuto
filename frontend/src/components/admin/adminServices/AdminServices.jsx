@@ -52,6 +52,8 @@ const AdminServices = ({setIsToken}) => {
 				setIsToken(true)
 			}
 		})
+		e.target.name.value = ''
+		e.target.price.value = ''
 	}
 
 	return (
