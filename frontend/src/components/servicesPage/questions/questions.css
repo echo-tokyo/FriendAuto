@@ -12,7 +12,7 @@
 	border: 1px solid;
 	transition: 0.5s ease;
 }
-.questions h3{
+.number{
 	user-select: text;
 	cursor: text;
 }
