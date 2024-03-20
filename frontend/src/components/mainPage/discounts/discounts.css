@@ -3,6 +3,7 @@
 	height: 240px;
 	background-image: url('../../../../public/bg_discounts.png');
 	border-radius: 50px;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	transition: 0.5s ease;
