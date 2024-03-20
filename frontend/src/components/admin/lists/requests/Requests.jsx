@@ -19,7 +19,7 @@ const Requests = ({setIsToken}) => {
 			setIsLoading(false)
 		})
 		.catch((error) => {
-			if (error.response.data.errors.invalid_token) {
+			if (error.response.data.errors.user_access_forbidden) {
 				setIsToken(true)
 			}
 			console.error('Ошибка при получении заявок', error)

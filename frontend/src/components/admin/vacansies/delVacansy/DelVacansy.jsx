@@ -18,7 +18,7 @@ const DelVacansy = ({setVacansiesList, isLoading, vacansiesList, setIsToken}) =>
 			.catch((error) => {
 				document.querySelector('.vac_del_inp').style.border = '2px solid red'
 				console.error('Ошибка при удалении услуги', error)
-				if(error.response.data.errors.invalid_token){
+				if(error.response.data.errors.user_access_forbidden){
 					setIsToken(true)
 				}
 			})

@@ -23,7 +23,7 @@ const AddVacansy = ({setVacansiesList, setIsToken}) => {
 			.catch((error) => {
 				document.querySelector('.vac_add_inp').style.border = '2px solid red'
 				console.error('Ошибка при добавлении вакансии', error)
-				if(error.response.data.errors.invalid_token){
+				if(error.response.data.errors.user_access_forbidden){
 					setIsToken(true)
 				}
 			})

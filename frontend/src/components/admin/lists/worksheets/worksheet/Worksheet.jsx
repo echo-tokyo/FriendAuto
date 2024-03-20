@@ -10,7 +10,7 @@ const Worksheet = ({worksheet, setWorksheets, setIsToken}) => {
 		axios.post(`${ip}/api/worksheet/mark-viewed/`, {id: worksheet.id}, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
 		.catch((error) => {
 			console.error('Ошибка при пометке', error)
-			if(error.response.data.errors.invalid_token){
+			if(error.response.data.errors.user_access_forbidden){
 				setIsToken(true)
 			}
 		})

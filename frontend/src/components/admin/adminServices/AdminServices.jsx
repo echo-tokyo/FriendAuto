@@ -16,7 +16,8 @@ const AdminServices = ({setIsToken}) => {
 			setCategorizedServices(response.data)
 		})
 		.catch(error => {
-			if(error.response.data.errors.invalid_token){
+			if(error.response.data.errors.user_access_forbidden
+				){
 				setIsToken(true)
 			}
 			console.error('Ошибка при получении услуг', error)
@@ -48,7 +49,7 @@ const AdminServices = ({setIsToken}) => {
 		.catch((error) => {
 			console.error('Ошибка при добавлении', error)
 			document.querySelector('.addserv').style.border = '2px solid red'
-			if(error.response.data.errors.invalid_token){
+			if(error.response.data.errors.user_access_forbidden){
 				setIsToken(true)
 			}
 		})

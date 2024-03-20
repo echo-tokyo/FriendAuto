@@ -19,7 +19,7 @@ const Worksheets = ({setIsToken}) => {
 		})
 		.catch((error) => {
 			console.error('Ошибка при поулчении заявок', error)
-			if(error.response.data.errors.invalid_token){
+			if(error.response.data.errors.user_access_forbidden){
 				setIsToken(true)
 			}
 		})

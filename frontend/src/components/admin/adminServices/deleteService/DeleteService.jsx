@@ -28,7 +28,8 @@ const DeleteService = ({categorizedServices, setCategorizedServices, setIsToken}
 			.catch((error) => {
 				console.error('Ошибка при удалении услуги', error)
 				document.querySelector('.del_btn').style.border = '2px solid red'
-				if(error.response.data.errors.invalid_token){
+				if(error.response.data.errors.user_access_forbidden
+					){
 					setIsToken(true)
 				}
 			})
