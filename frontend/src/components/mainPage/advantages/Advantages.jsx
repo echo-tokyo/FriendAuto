@@ -2,7 +2,7 @@ import './advantages.css'
 
 const Advantages = () => {
   return (
-	<div className="advantages" id='advantages'>
+	<div className="advantages element-animation" id='advantages'>
 		<h2><span>П</span>реимущества</h2>
 		<div className="advantages_items">
 			<div className="advantages_item">

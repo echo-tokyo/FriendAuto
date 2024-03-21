@@ -104,6 +104,17 @@ img{
 img:hover{
 	transform: scale(1.025);
 }
+.element-animation {
+	margin: 2rem 0;
+	font-size: 3rem;
+	opacity: 0;
+	transform: translateY(20px);
+}
+.element-animation.element-show {
+	opacity: 1;
+	transition: all 1.5s;
+	transform: translateY(0%);
+}
 
 /* Шрифты */
 h1{

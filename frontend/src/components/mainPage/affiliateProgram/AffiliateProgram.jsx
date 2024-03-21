@@ -5,7 +5,7 @@ import { backgroundToggle, toggleModal3 } from '../../../store/modal/modal.slice
 const AffiliateProgram = () => {
 	const dispatch = useDispatch()
 	return (
-		<div className="affiliateProgram">
+		<div className="affiliateProgram element-animation">
 			<div className="affiliateProgram_title">
 				<h2><span>П</span>артнерская программа</h2>
 			</div>
