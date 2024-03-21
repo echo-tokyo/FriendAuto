@@ -30,7 +30,7 @@ const Worksheet = ({worksheet, setWorksheets, setIsToken}) => {
 					<h3><span>Номер телефона:</span> {worksheet.client_phone}</h3>
 				</div>
 			</div>
-				<div className="border"></div>
+			<div className="border"></div>
 		</div>
 	)	
 }

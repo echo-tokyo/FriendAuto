@@ -19,7 +19,6 @@
 	display: flex;
 	align-items: center;
 	height: 100%;
-	width: fit-content;
 	font-weight: 500;
 }
 .requests_list{
