@@ -3,7 +3,8 @@ import './adminHeader.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-const AdminHeader = () => {
+const AdminHeader = ({isToken}) => {
+
 	const nav = useNavigate()
 	const ip = useSelector((state) => state.ip.ipAddress)
 
@@ -14,7 +15,11 @@ const AdminHeader = () => {
 		})
 		localStorage.removeItem('token')
 		nav('/admin')
+		if (isToken) {
+			document.body.style.overflow = 'visible' 
+		}
 	}
+
 	return (
 		<div className="header">
 			<div className='nav'>

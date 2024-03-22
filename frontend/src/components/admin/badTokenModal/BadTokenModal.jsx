@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 const BadTokenModal = () => {
 
 	const nav = useNavigate()
+	document.body.style.overflow = 'hidden'
 
 	const a = () => {
 		document.body.style.overflow = 'visible' 

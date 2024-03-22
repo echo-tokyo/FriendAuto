@@ -9,21 +9,15 @@ import { useState } from 'react'
 import BadTokenModal from './badTokenModal/BadTokenModal'
 
 const Admin = () => {
+	
 	const [isToken, setIsToken] = useState(false)
 
-	if (isToken) {
-		document.body.style.overflow = 'hidden'
-	}
-	else {
-		document.body.style.overflow = 'visible'
-	}
-	
 	return (
 		<>
 		{localStorage.getItem('token') ? (
 			<>
 				<div className="admin_content">
-					<AdminHeader />
+					<AdminHeader isToken={isToken}/>
 					<div className="lists">
 						<Requests setIsToken={setIsToken}/>
 						<Worksheets setIsToken={setIsToken}/>
