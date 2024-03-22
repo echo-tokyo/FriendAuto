@@ -49,7 +49,7 @@ const MainPage = () => {
 
 	return (
 		<>
-		<FirstScreen jobItems={jobItems}/>
+		<FirstScreen />
 		<div className="content">
 			<Services />
 			<Reviews />

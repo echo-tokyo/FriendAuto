@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './FirstScreen.css'
 
-const FirstScreen = ({jobItems}) => {
+const FirstScreen = () => {
 	const nav = useNavigate()
 	return (
 		<div className="mainScreen">
@@ -10,7 +10,7 @@ const FirstScreen = ({jobItems}) => {
 				<a href="#reviews"><h4>ОТЗЫВЫ</h4></a>
 				<a href="#advantages"><h4>ПРЕИМУЩЕСТВА</h4></a>
 				<a href="#discounts"><h4>СКИДКИ</h4></a>
-				{jobItems.length > 0 && <a href="#job"><h4>ТРУДОУСТРОЙСТВО</h4></a>}
+				<a href="#job"><h4>ТРУДОУСТРОЙСТВО</h4></a>
 				{localStorage.getItem('token') && <Link to='/admin/panel'><h4>АДМИН</h4></Link>}
 			</nav>
 			<div className="title">
