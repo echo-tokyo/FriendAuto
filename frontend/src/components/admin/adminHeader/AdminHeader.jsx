@@ -1,6 +1,6 @@
 import axios from 'axios'
 import './adminHeader.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const AdminHeader = ({isToken}) => {
@@ -15,16 +15,20 @@ const AdminHeader = ({isToken}) => {
 		})
 		localStorage.removeItem('token')
 		nav('/admin')
-		if (isToken) {
+	}
+
+	const backToSite = () => {
+		if (isToken === false) {
 			document.body.style.overflow = 'visible' 
 		}
+		nav('/')
 	}
 
 	return (
 		<div className="header">
 			<div className='nav'>
 				<h3 onClick={() => logout()}>Выйти</h3>
-				<Link to='/'><h3>Вернуться на сайт</h3></Link>
+				<h3 onClick={() => backToSite()}>Вернуться на сайт</h3>
 			</div>
 			<h2><span>Админ</span>-панель</h2>
 		</div>

@@ -9,7 +9,7 @@ import { useState } from 'react'
 import BadTokenModal from './badTokenModal/BadTokenModal'
 
 const Admin = () => {
-	
+
 	const [isToken, setIsToken] = useState(false)
 
 	return (
@@ -28,7 +28,7 @@ const Admin = () => {
 					<Vacansies setIsToken={setIsToken}/>
 				</div>
 				<AdminFooter />
-				{isToken && (
+				{isToken  && (
 					<BadTokenModal />
 				)}
 			</>
