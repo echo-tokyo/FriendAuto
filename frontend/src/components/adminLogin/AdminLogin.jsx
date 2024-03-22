@@ -1,6 +1,6 @@
 import axios from 'axios'
 import './adminLogin.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
@@ -37,7 +37,10 @@ const AdminLogin = () => {
 		<div className="admin_background"></div>
 		<div className="wrapper">
 			<div className="admin_login">
-				<h2><span>В</span>ход</h2>
+				<div className="adm_titles">
+					<h2><span>В</span>ход</h2>
+					<Link to='/'><h4>Вернуться на сайт</h4></Link>
+				</div>
 				<form action="" className='admin_form_l' onSubmit={(e) => login(e)}>
 					<input type="text" name='login' placeholder='Логин'/>
 					<input type="password" name='password' placeholder='Пароль'/>

@@ -22,6 +22,15 @@
 	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
+.adm_titles{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+}
+.adm_titles h3:hover{
+	color: grey
+}
 .admin_form_l, .admin_form{
 	display: flex;
 	flex-direction: column;
