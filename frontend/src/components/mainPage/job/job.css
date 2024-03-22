@@ -57,6 +57,9 @@
 	}
 }
 @media (max-width: 750px) {
+	.job h2{
+		text-align: center;
+	}
 	.job_items{
 		gap: 20px;
 		flex-direction: column;
