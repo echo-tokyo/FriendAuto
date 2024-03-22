@@ -32,17 +32,20 @@ const MainPage = () => {
 	function onEntry(entry) {
 		entry.forEach(change => {
 			if (change.isIntersecting) {
-				change.target.classList.add('element-show');
+				change.target.classList.add('element-show')
 			}
-		});
+			console.log('change.target',change.target)
+		})
 	}
 	let options = {
 		threshold: [0.5]
-	};
-	let observer = new IntersectionObserver(onEntry, options);
-	let elements = document.querySelectorAll('.element-animation');
+	}
+	let observer = new IntersectionObserver(onEntry, options)
+	let elements = document.querySelectorAll('.element-animation')
+	console.log(elements)
 	for (let elm of elements) {
-		observer.observe(elm);
+		observer.observe(elm)
+		console.log('elm', elm)
 	}
 
 	return (
