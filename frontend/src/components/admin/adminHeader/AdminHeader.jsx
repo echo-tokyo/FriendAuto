@@ -18,7 +18,7 @@ const AdminHeader = ({isToken}) => {
 	}
 
 	const backToSite = () => {
-		if (isToken === true) {
+		if (isToken) {
 			document.body.style.overflow = 'visible' 
 			console.log('first')
 		}

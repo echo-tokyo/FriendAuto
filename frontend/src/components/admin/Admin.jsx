@@ -28,7 +28,7 @@ const Admin = () => {
 					<Vacansies setIsToken={setIsToken}/>
 				</div>
 				<AdminFooter />
-				{isToken  && (
+				{isToken && (
 					<BadTokenModal />
 				)}
 			</>
