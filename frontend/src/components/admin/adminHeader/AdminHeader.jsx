@@ -18,8 +18,9 @@ const AdminHeader = ({isToken}) => {
 	}
 
 	const backToSite = () => {
-		if (isToken === false) {
+		if (isToken === true) {
 			document.body.style.overflow = 'visible' 
+			console.log('first')
 		}
 		nav('/')
 	}
