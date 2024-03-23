@@ -21,6 +21,7 @@
 }
 .signup_services .card h4{
 	font-size: 12px;
+	font-weight: 700;
 }
 .signup_services .card img{
 	width: 120px;
@@ -34,6 +35,9 @@
 	.signup_services .card img{
 		width: 100px;
 		height: 100px;
+	}
+	.signup_services .card_text h3{
+		font-size: 18px;
 	}
 	.signup_services .card_text{
 		padding-top: 5px;
@@ -63,6 +67,9 @@
 	.signup_services .card{
 		width: 160px;
 		height: 160px;
+	}
+	.signup_services .card_text h3{
+		font-size: 14px;
 	}
 	.signup_services .card img{
 		width: 70px;
