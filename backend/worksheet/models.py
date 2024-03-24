@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from django.db import models
 
 from vacancy.models import Vacancy
@@ -36,4 +38,6 @@ class Worksheet(models.Model):
 
     @property
     def str_sent_at(self):
-        return str(self.sent_at)[:16].replace('T', ' ')
+        time_with_time_zone = self.sent_at + timedelta(hours=3)
+
+        return str(time_with_time_zone)[:16].replace('T', ' ')
