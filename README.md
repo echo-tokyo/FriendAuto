@@ -77,6 +77,11 @@ exit
 docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --force-renewal
 ```
 
+### Real cron task:
+```shell
+0 0 1 */1 * docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --force-renewal &> /root/logs/certbot_logs/cert_log_$(date +"\%Y-\%m-\%d_\%H-\%M-\%S").log
+```
+
 <br><br><br><br>
 
 (Change admin password):
