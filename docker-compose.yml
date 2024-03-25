@@ -38,6 +38,7 @@ services:
     volumes:
       - certbot-www:/var/www/certbot/:rw
       - certbot-conf:/etc/letsencrypt/:rw
+    # remove flag "--staging" to make real SSL (not for tests)
     command: certonly --staging --webroot --webroot-path=/var/www/certbot/ --agree-tos --email ${CERTBOT_EMAIL} -d frendauto.ru -d www.frendauto.ru
     networks:
       proj_network:
