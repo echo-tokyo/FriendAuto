@@ -69,6 +69,12 @@ nginx -s reload
 exit
 ```
 
+6. Remove certbot container:
+
+```shell
+docker rm friend_auto_certbot
+```
+
 
 ## Update SSL certificate:
 
