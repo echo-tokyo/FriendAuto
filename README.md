@@ -76,3 +76,12 @@ exit
 ```shell
 docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --force-renewal
 ```
+
+<br><br><br><br>
+
+(Change admin password):
+```shell
+docker exec -it friend_auto_backend bash
+
+python3 manage.py changepassword admin
+```
