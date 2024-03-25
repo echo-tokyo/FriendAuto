@@ -122,11 +122,15 @@ JWT_EXPIRE = timedelta(days=20)
 
 
 # development (NOT USE IN PRODUCTION)
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+
 # Адреса с доступом к кросс-доменным запросам
-# CORS_ALLOWED_ORIGINS = [
-#    "http://172.16.1.9"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://172.16.1.9",
+    "https://172.16.1.9",
+    "http://45.12.74.203",
+    "https://45.12.74.203",
+]
 
 # Разрешение на включение в запрос куки
 CORS_ALLOW_CREDENTIALS = True
