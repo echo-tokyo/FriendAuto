@@ -35,3 +35,44 @@ docker exec -it friend_auto_backend bash
 python3 manage.py migrate
 python3 manage.py createsuperuser --first-user
 ```
+
+#### Exit from nginx container
+```shell
+exit
+```
+
+
+## Firstly SSL certificate set up:
+
+1. Do all steps in `Project deploy` part
+2. Go to nginx container:
+
+```shell
+docker exec -it friend_auto_nginx_front sh
+```
+
+3. Uncomment string `#include /etc/nginx/conf.d/https-site.conf;`in `/etc/nginx/nginx.conf`
+```shell
+vi /etc/nginx/nginx.conf
+```
+
+4. Check config file for valid and reload nginx:
+
+```shell
+nginx -t
+nginx -s reload
+```
+
+5. Exit from nginx container
+
+```shell
+exit
+```
+
+
+## Update SSL certificate:
+
+### Write command in cron:
+```shell
+docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --force-renewal
+```

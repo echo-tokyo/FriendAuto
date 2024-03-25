@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
     volumes:
-      - "mediafiles:/app/backend/media"
+      - mediafiles:/app/backend/media:rw
     ports:
       - "8080:8080"
     networks:
@@ -30,22 +30,39 @@ services:
 #      proj_network:
 #        ipv4_address: 172.16.1.4
 
+  certbot:
+    image: certbot/certbot
+    container_name: friend_auto_certbot
+    env_file:
+      - .env
+    volumes:
+      - certbot-www:/var/www/certbot/:rw
+      - certbot-conf:/etc/letsencrypt/:rw
+    command: certonly --staging --webroot --webroot-path=/var/www/certbot/ --agree-tos --email ${CERTBOT_EMAIL} -d frendauto.ru -d www.frendauto.ru
+    networks:
+      proj_network:
+        ipv4_address: 172.16.1.5
+    depends_on:
+      - nginx
+
   nginx:
     build:
-#      context: ./nginx
       context: .
       dockerfile: DockerfileNginx
     container_name: friend_auto_nginx_front
+    restart: always
     volumes:
-      - "mediafiles:/media"
+      - mediafiles:/media:ro
+      - certbot-www:/var/www/certbot/:ro
+      - certbot-conf:/etc/nginx/ssl/:ro
     ports:
       - "80:80"
+      - "443:443"
     networks:
       proj_network:
         ipv4_address: 172.16.1.9
     depends_on:
       - backend
-#      - frontend
 
 
 networks:
@@ -58,3 +75,5 @@ networks:
 
 volumes:
   mediafiles:
+  certbot-www:
+  certbot-conf:
