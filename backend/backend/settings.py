@@ -117,8 +117,8 @@ REST_FRAMEWORK = {
         'core.auth_backend.JWTAuthentication',
     ),
 }
-# JWT_EXPIRE = timedelta(days=10)
-JWT_EXPIRE = timedelta(minutes=10)
+JWT_EXPIRE = timedelta(days=20)
+# JWT_EXPIRE = timedelta(minutes=10)
 
 
 # development (NOT USE IN PRODUCTION)
