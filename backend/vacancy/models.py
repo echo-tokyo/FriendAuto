@@ -21,7 +21,7 @@ class Vacancy(models.Model):
     @property
     def photo_url(self):
         if self.photo and hasattr(self.photo, 'url'):
-            return f'http://{settings.IP_OR_DNS_SERVER}{self.photo.url}'
+            return f'{settings.IP_OR_DNS_SERVER}{self.photo.url}'
 
     def delete(self, *args, **kwargs):
         photo = self.photo
