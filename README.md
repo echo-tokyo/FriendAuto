@@ -88,7 +88,7 @@ docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --f
 0 0 1 */1 * docker-compose -f /root/FriendAuto/docker-compose.yml run --rm certbot renew --force-renewal &> /root/logs/certbot_logs/cert_log_$(date +"\%Y-\%m-\%d_\%H-\%M-\%S").log
 ```
 
-<br><br><br><br>
+<br>
 
 (Change admin password):
 ```shell
@@ -96,6 +96,8 @@ docker exec -it friend_auto_backend bash
 
 python3 manage.py changepassword admin
 ```
+
+<br><br><br><br>
 
 ## Важные пометки для продакшна
 1. Вот так выглядят доступные адреса CORS:
@@ -115,7 +117,9 @@ CORS_ALLOW_METHODS = (
     "DELETE",
 )
 ```
+
 2. Фронт посылает fetch/axios запросы на адрес:
+
 ```json5
 {
   ipAddress: 'https://domain.ru'
