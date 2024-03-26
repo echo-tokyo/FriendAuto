@@ -96,3 +96,28 @@ docker exec -it friend_auto_backend bash
 
 python3 manage.py changepassword admin
 ```
+
+## Важные пометки для продакшна
+1. Вот так выглядят доступные адреса CORS:
+```python
+# Адреса с доступом к кросс-доменным запросам
+CORS_ALLOWED_ORIGINS = [
+    "https://domain.ru",
+    "https://www.domain.ru",
+]
+# Разрешение на включение в запрос куки
+CORS_ALLOW_CREDENTIALS = True
+# Разрешённые методы
+CORS_ALLOW_METHODS = (
+    "OPTIONS",
+    "GET",
+    "POST",
+    "DELETE",
+)
+```
+2. Фронт посылает fetch/axios запросы на адрес:
+```json5
+{
+  ipAddress: 'https://domain.ru'
+}
+```
