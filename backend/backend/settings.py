@@ -126,10 +126,8 @@ JWT_EXPIRE = timedelta(days=20)
 
 # Адреса с доступом к кросс-доменным запросам
 CORS_ALLOWED_ORIGINS = [
-    "http://172.16.1.9",
-    "https://172.16.1.9",
-    "http://45.12.74.203",
-    "https://45.12.74.203",
+    "https://domain.ru",
+    "https://www.domain.ru",
 ]
 
 # Разрешение на включение в запрос куки
